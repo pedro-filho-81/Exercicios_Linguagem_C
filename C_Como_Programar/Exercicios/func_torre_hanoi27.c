@@ -10,49 +10,33 @@
 #include <locale.h> // Para setlocale
 
 // protótipo de função
-void torreDeHanoi(int peso, char origem, char auxiliar, char destino);
+void torreDeHanoi(int peso, char origem[6], char auxiliar[8], char destino[7] );
 
 //Função principal
 int main() { // início main
+
   // variáveis
   int n = 0;
+
 	//Define para Português Brasil
 	setlocale(LC_ALL, "Portuguese");
+
 	// entrada de dados
 	printf("Digite a quantidade de pesos: ");
 	scanf("%d", &n);
-	system("cls"); // limpe a tela
-	// cabeçalho
-	printf("{ TORRE DE HANOI }\n");
-  printf("torreDeHanoi(%d, 'A', 'B', 'C');\n", n);
-  // passando valores para função torre de hanoi
-  torreDeHanoi(n, 'A', 'B', 'C');
 
-  /* Esplicação dos movimentos para 4 anilhas.
-  4 = NÚMERO DE ANILHAS NA ORIGEM
-  CADA UMA MAIOR QUE A OUTRA,
-  A MAIOR É SEMPRE A ÚLTIMA
-  REGRA - A MAIOR NÃO PODE FICAR EM CIMA DA MENOR.
-  A = ORIGEM; B = AUXILIAR; C = DESTINO;
-  MOVIMENTOS:
-  1 - A -> B // ORIGEM PARA AUXILIAR
-  2 - A -> C // ORIGEM PARA DESTINO
-  3 - B -> C // AUXILIAR PARA DESTINO
-  4 - A -> B // ORIGEM PARA AIXILIAR
-  5 - C -> A // DESTINO PARA ORIGEM
-  6 - C -> B // DESTINO PARA AUXILIAR
-  7 - A -> B // ORIGEM PARA AUXILIAR
-  8 - A -> C // ORIGEM PARA DESTINO
-  9 - B -> C // AUXILIAR PARA DESTINO
-  10- B -> A // AUXILIAR PARA ORIGEM
-  11- C -> A // DESTINO PARA ORIGEM
-  12- B -> C // AUXILIAR PARA DESTINO
-  13- A -> B // ORIGEM PARA AUXILIAR
-  14- A -> C // ORIGEM PARA DESTINO
-  15- B -> C // AUXILIAR PARA DESTINO - FIM DO JOGO
-  COM 4 ANILHAS PRECISA-SE DE 15 MOVIMENTOS PARA
-  COLOCAR TODAS AS ANILHAS EM ORDEM DA ORIGEM PARA O
-  DESTINO. */
+	system("cls"); // limpe a tela
+
+	// cabeçalho
+	printf("\t{ TORRE DE HANOI }\n");
+   printf( "\t  Com %d anilhas.\n", n );
+   printf("(\"ORIGEM\", \"AUXILIAR\", \"DESTINO\" );\n\n", n);
+
+  // passando valores para função torre de hanoi
+  torreDeHanoi(n, "origem", "auxiliar", "destino");
+
+  // pular uma linha
+  printf( "\n" );
 
 	// Pausa o sistema
 	system("pause");
@@ -63,7 +47,7 @@ int main() { // início main
 } // fim main
 
 // função torreDeHanoi
-void torreDeHanoi(int peso, char origem, char auxiliar, char destino) {
+void torreDeHanoi(int peso, char origem[6], char auxiliar[8], char destino[7]) {
   // verifica se peso é maior que zero
   if(peso > 0) { // se sim
 
@@ -78,7 +62,7 @@ void torreDeHanoi(int peso, char origem, char auxiliar, char destino) {
     torreDeHanoi(peso - 1, origem, destino, auxiliar);
 
     // imprime o movimento e pula uma linha
-    printf("Mover de %c para %c\n", origem, destino);
+    printf("Mover de %s para %s\n", origem, destino);
 
     /*
         2º - A para B ( origem para auxiliar )
