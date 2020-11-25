@@ -1,5 +1,6 @@
 /*
-   Função: 5.54 Instrução auxiliada por computador: variando  os tipos de
+   Função: Este exercício é a junção dos exercicios 5.50 a 5.53.
+   5.54 Instrução auxiliada por computador: variando  os tipos de
    problemas. Modifique o programa do  Exercício 5.53 de modo a permitir que
    o usuário escolha  um tipo de problema aritmético para estudar. Uma opção
    1 significa problemas de adição, 2 significa problemas  de subtração,
@@ -396,34 +397,3 @@ void menu_misto()
    printf( "   *******************************\n" );
    printf( "   Qual a sua opção? " );
 } // fim função menu misto
-
-// função verificar nível
-int verificar( int nv )
-{
-   int confere = 0;
-
-      // se nível igual a 1
-      if( nv == 1 ){
-         confere = multi( alea1(), alea1() );
-      } // fim if
-      // se nível igual a 2
-      else if( nv == 2 ){
-         confere = multi( alea2(), alea2() );
-      } // fim if
-      // se nível igual a 3
-      else if( nv == 3 ){
-         confere = multi( alea3(), alea3() );
-      } // fim if
-
-      return confere;
-
-} // fim função verificar
-
-// função aritimética
-int aritimetica( int opcao )
-{
-   // variável
-   int tipo = 0;
-   // retornar tipo
-   return tipo;
-} // fim da função aritimética
