@@ -17,19 +17,22 @@
 #include <time.h>
 
 // protótipos de função
+char sinal( int opc ); // retorna o sinal aritimético
+int numero_1( int niv ); // retorna o primeiro número do nível
+int numero_2( int niv ); // retornar o segundo número do nível
 int alea1(); // retorna valores aleatórios entre 1 e 9
 int alea2(); // retorna valores aleatórios entre 1 e 99
 int alea3(); // retorna valores aleatórios entre 1 e 999
-int somar( int n1, int n2 ); // faz a soma de dois valores
-int subtrair( int n1, int n2 ); // faz a subtração entre dois valores
-int multi( int n1, int n2 ); // faz a multiplicação entre dois valores
 int perguntar( int n1,int n2, char sinal ); // para saber qual a resposta do usuário
 int verificar( int nv ); // para verificar qual o nível o usuário escolheu
 int aritimetica( int opcao ); // para saber qual a opção aritimética escolheu
+int escolha( int n1, int n2, int opc ); // escolher a opção aritimética ( +, -, ou x )
 void menu(); // para saber em que nível de dificuldade o usuário quer jogar
 void menu_misto(); // para saber qual a operação aritimética
 void msg_boa( int msg ); // para mostras boas mensagens
 void msg_ruim( int msg ); // para exibir as mensagens ruins
+void acertados( int certos, int erros ); // para mostrar os acertos
+void errados( int errou, int acertou ); // para mostrar os errados
 
 // função principal
 int main()
@@ -41,28 +44,29 @@ int main()
     srand( time(NULL) );
 
    // variáveis
-   // variáveis recebem números aleatórios
+   // recebem números aleatórios
    int n1 = 0, n2 = 0;
    int resp = 0; // para responder a pergunta
    int opc = 0; //qual a opção aritimética
-   int nivel = 1; // para escolher o nível de dificuldade
-   int confere = 0; // para receber a função multi
-   int boa_msg = 0; // para receber números aleatórios de 1 a 4
-   int ruim_msg = 0; // para receber números aleatórios entre 1 e 4
-   int certo = 0; // para fazer a contagem de acertos do aluno
-   int errado = 0; // para contar o número de erros do aluno
-   char sinal = ' '; // para receber o sinal aritimético
+   int seg_opc = 0;
+   int nivel = 1; // escolher o nível de dificuldade
+   int confere = 0; // receber a função multi
+   int boa_msg = 0; // receber números aleatórios de 1 a 4
+   int ruim_msg = 0; // receber números aleatórios entre 1 e 4
+   int certo = 0; // fazer a contagem de acertos do aluno
+   int errado = 0; // contar o número de erros do aluno
+   char sin = 0; // receber sinal aritimético
 
-   // PRIMEIRO WHILE
+   // PRIMEIRO WHILE USADO PARA O PRIMEIRO CÁLCULO
    // faça enquanto nível diferente de zero
    while( nivel != 0 ) // primeiro while
    {
-      // chamar a função menu
+      // chamar a função menu principal
       menu();
       // Escolher o nível de dificuldade
       scanf( "%d", &nivel ); // entrada do usuário
 
-      //VERIFICAR O NÍVEL
+      //VERIFICAR O NÍVEL DE DIFICULDADE
       // se nível menor ou igual a zero ou maior que três
       if( nivel <= 0 || nivel > 3 ) {
          // imprima
@@ -70,192 +74,160 @@ int main()
          break; // sair do while
       } // fim if
 
-      // se nível igual a 1
-      else if( nivel == 1 ){
-         // n1 e n2 recebe números aleatórios com um digito
-         n1 = alea1();
-         n2 = alea1();
-      } // fim if
-      // se nível igual a 2
-      else if( nivel == 2 ){
-         // n1 e n2 recebe números aleatórios com dois digitos
-         n1 = alea2();
-         n2 = alea2();
-      } // fim if
-      // se nível igual a 3
-      else if( nivel == 3 ){
-         // n1 e n2 recebe números aleatórios com três digitos
-         n1 = alea3();
-         n2 = alea3();
-      } // fim if
-
-      // chamar o menu da aritimética
+      // MENU SECUNDARIO
+      // chamar o menu da opção aritimética
       menu_misto();
       // aguarda a escolha da opção do usuário
       scanf( "%d", &opc );
+      // se opção igual a zero
+      if( opc == 0 ) break;
 
-      // atribuir a confere a opção aritimética escolhida
-      // escolha a opção
-      switch( opc )
-      {
-         case 1: // caso um
-            sinal = '+';
-            // o tipo é a soma
-            confere = somar( n1, n2 );
-            break; // fim tipo
-         case 2: // caso dois
-            sinal = '-';
-            // o tipo é a subtração
-            confere = subtrair( n1, n2 );
-            break; // fim tipo
-         case 3: // caso três
-            sinal = 'x';
-            // o tipo é a multiplicação
-            confere = multi( n1, n2 );
-            break; // fim tipo
-         case 4:
+      // LOOP USADO PARA A OPÇÃO IGUAL A 4
+      // FAÇA ENQUANTO OPC IGUAL A 4
+      while( opc == 4 ) { // se verdade
+
+         // atribuir a função número 1 a variável n1
+         n1 = numero_1( nivel );
+         // atribuir a função número 2 a variável n2
+         n2 = numero_2( nivel );
+
+         // segunda opção recebe um valor aleatório entre 1 e 3
+         seg_opc = 1 + rand() % 3;
+
+         // chamar a função escolha e atribuir a segunda opção
+         escolha( n1, n2, seg_opc );
+
+         // resposta recebe o valor da função perguntar
+         resp = perguntar( n1, n2, sinal( seg_opc ) );
+
+         // se resposta igual a zero
+         if( resp == 0 ) {
+            nivel = 0;
+            opc = 0;
             break;
-      } // fim switch
+         } // sair do programa
 
-      // Cabeçalho
-      printf( "\n{ Tabuada de nível %d [0 = sair]}\n", nivel );
+         // se a resposta for igual a escolha
+         if( resp == escolha( n1, n2, seg_opc ) ) {
 
-      // resposta recebe o valor da pergunta
-      resp = perguntar( n1, n2, sinal );
-
-      // se resposta igual a zero
-      if( resp == 0 ) break; // sair do programa
-
-      // SEGUNDO WHILE
-      // enquanto nível diferente de zero faça
-      while( nivel != 0 )
-      {
-         // verificar se a resposta é igual a confere
-         if( resp == confere )
-         { // se verdade
-
-            // contar certo
-            certo += 1;
-
-            // verificar se certo é maior que 7
-            if( certo > 7 ) // se verdade
-            {
-               // imprimir
-               printf( "\nDe %d questões você acertou %d, errou %d\n",
-                      certo + errado, certo, errado );
-               printf( "Parabéns, Você está pronto para o próximo nível!\n" );
-               printf( "Dê a vez ao próximo aluno.\n\ns" );
-               // zerar o contador certo
-               certo = 0;
-               // pausa o sistema
-               system( "pause" );
-               // limpar a tela
-               system( "cls" );
-               break; // sair do programa
-            } // fim if
-
-            // gerador
-            srand( time( NULL ) );
             // boa mensagem para o aluno recebe valor aleatótio
             boa_msg = 1 + rand() % 4;
             // e chamar a função boas mensagens
             msg_boa( boa_msg );
 
-            //VERIFICAR O NÍVEL
-            // se nível igual a zero
-            if( nivel == 0 ) {
-               break; // sair do while
-            }
-            // se nível igual a 1
-            if( nivel == 1 ){
-               // receber números aleatórios com um digito
-               n1 = alea1();
-               n2 = alea1();
-            } // fim if
-            // se nível igual a 2
-            else if( nivel == 2 ){
-               // receber números aleatórios com dois digitos
-               n1 = alea2();
-               n2 = alea2();
-            } // fim if
-            // se nível igual a 3
-            else if( nivel == 3 ){
-               // receber números aleatórios com três digitos
-               n1 = alea3();
-               n2 = alea3();
-            } // fim if
+            // contar os certos
+            certo += 1;
+            // chamar a função acertados
+            acertados( certo,errado );
 
-            // gerador
-            srand( time( NULL ) );
-
-            // atribuir a confere a opção aritimética escolhida
-            // escolha a opção
-            switch( opc )
-            {
-               case 1: // caso um
-                  sinal = '+'; // sinal da adição
-                  // o tipo é a soma
-                  confere = somar( n1, n2 );
-                  break; // fim tipo
-               case 2: // caso dois
-                  sinal = '-'; // sinal da subtração
-                  // o tipo é a subtração
-                  confere = subtrair( n1, n2 );
-                  break; // fim tipo
-               case 3: // caso três
-                  sinal = 'x'; // sinal da multiplicação
-                  // o tipo é a multiplicação
-                  confere = multi( n1, n2 );
-                  break; // fim tipo
-               case 4:
-                  break;
-            } // fim switch
-
-            // resposta recebe o valor da pergunta
-            resp = perguntar( n1, n2, sinal );
-
-            // se resposta igual a zero
-            if( resp == 0 ) nivel = 0; // sair do programa
-         } // fim if
-
-         // se a resposta for diferente de convere
-         else
-         {
-            // errado somar 1
-            errado +=1;
-
-            // verificar se errado é maior que 7
-            if( errado > 7 )
-            {
-               // imprimir
-               printf( "\nDe %d questões você acertou %d, errou %d\n",
-                      certo + errado, certo, errado );
-               printf( "Por favor, peça ajuda a seu professor.\n" );
-               printf( "Dê a vez ao próximo aluno.\n\n" );
-               // zerar o contador errado
-               errado = 0;
-               // pausa o sistema
-               system( "pause" );
-               // limpar a tela
-               system( "cls" );
-               break; // sair do programa
-            } // fim if
-
+         } // fim if resposta igual a escolha
+         else { // se não
             // mensagem ruim recebe valor aleatório entre 1 e 4
             ruim_msg = 1 + rand() % 4;
             // chamar a função mensagens ruins que recebe como parametro um valor
             msg_ruim( ruim_msg );
 
-            // resposta recebe o valor da pergunta
-            resp = perguntar( n1, n2, sinal );
-            // se resposta igual a zero
-            if( resp == 0 ) nivel = 0; // sair do programa
+            // enquanto a resposta for diferente da escolha repetir
+            while( resp != escolha( n1, n2, seg_opc) ) {
 
-         } // fim else if
+               // resposta recebe o valor da função perguntar
+               resp = perguntar( n1, n2, sinal( seg_opc ) );
 
-      } // fim segundo while
+               // se resposta igual a zero
+               if( resp == 0 ) {
+                  nivel = 0;
+                  opc = 0;
+                  break;
+               } // sair do programa
 
-   } // fim while
+            } // fim while
+         } // fim else
+      } // fim while opc igual a 4
+
+      // LOOP USADO PARA A OPÇÃO entre 1 e 3
+      // se opção maior que zero e menor que 4
+      while( opc > 0 && opc < 4 ) {
+
+         //ATRIBUIR VALORES AS VARIÁVEIS N1 e N2
+         // atribuir a função número 1 a variável n1
+         n1 = numero_1( nivel );
+         // atribuir a função número 2 a variável n2
+         n2 = numero_2( nivel );
+
+         // atribuir a confere a opção aritimética escolhida
+         // escolha a opção
+         escolha( n1, n2, opc );
+
+         // resposta rec=ebe o valor da pergunta
+         resp = perguntar( n1, n2, sinal( opc ) );
+
+         // se resposta igual a zero
+         if( resp == 0 ) {
+            nivel = 0;
+            opc = 0;
+            break;
+         } // sair do programa
+
+         // se a resposta for igual a escolha
+         if( resp == escolha( n1, n2, opc ) ) {
+
+            // contar certo
+            certo += 1;
+
+            // boa mensagem para o aluno recebe valor aleatótio
+            boa_msg = 1 + rand() % 4;
+            // e chamar a função boas mensagens
+            msg_boa( boa_msg );
+
+            // chamar a função acertados
+            acertados( certo, errado );
+            // se certo maior que 7 sair do while
+            if( certo > 7 ) {
+               certo = 0;
+               break;
+            } // fim if
+
+         } // fim if resposta igual a escolha
+         else {
+            // mensagem ruim recebe valor aleatório entre 1 e 4
+            ruim_msg = 1 + rand() % 4;
+            // chamar a função mensagens ruins que recebe como parametro um valor
+            msg_ruim( ruim_msg );
+
+            // enquanto a resposta for diferente da escolha repita
+            while( resp != escolha( n1, n2, opc) ) {
+
+               // mensagem ruim recebe valor aleatório entre 1 e 4
+               ruim_msg = 1 + rand() % 4;
+               // chamar a função mensagens ruins que recebe como parametro um valor
+               msg_ruim( ruim_msg );
+
+               // contar quantas vezes errou
+               errado += 1;
+               // chamar a função errados
+               errados( errado, certo );
+               // se errado maior que 7 sair do while
+               if( errado > 7 ) {
+                  errado = 0;
+                  opc = 0;
+                  break;
+               } // fim if
+
+               // resposta recebe o valor da função perguntar
+               resp = perguntar( n1, n2, sinal( opc ) );
+
+               // se resposta igual a zero
+               if( resp == 0 ) {
+                  nivel = 0;
+                  opc = 0;
+                  break;
+               } // sair do programa
+
+            } // fim while
+         } // fim else
+      } // fim while opção entre 1 e 3
+
+   } // fim primeiro while
 
     // pausar o sistema
     system( "pause" );
@@ -263,6 +235,57 @@ int main()
     return 0; // fim do programa
 
 } // fim da função main
+
+// função número 1
+// retorna o primeiro número do nível
+int numero_1( int niv )
+{
+   // variável
+   int n1 = 0;
+   // se nível igual a 1
+   if( niv == 1 ){
+      // n1 e n2 recebe números aleatórios com um digito
+      n1 = alea1();
+   } // fim if
+   // se nível igual a 2
+   else if( niv == 2 ){
+      // n1 e n2 recebe números aleatórios com dois digitos
+      n1 = alea2();
+   } // fim if
+   // se nível igual a 3
+   else if( niv == 3 ){
+      // n1 e n2 recebe números aleatórios com três digitos
+      n1 = alea3();
+   } // fim if
+   // retornar o número 1
+   return n1;
+} // fim função número 1
+
+// função número 2
+// retornar o segundo número do nível
+int numero_2( int niv )
+{
+   // variável
+   int n2 = 0;
+
+   // se nível igual a 1
+   if( niv == 1 ){
+      // n1 e n2 recebe números aleatórios com um digito
+      n2 = alea1();
+   } // fim if
+   // se nível igual a 2
+   else if( niv == 2 ){
+      // n1 e n2 recebe números aleatórios com dois digitos
+      n2 = alea2();
+   } // fim if
+   // se nível igual a 3
+   else if( niv == 3 ){
+      // n1 e n2 recebe números aleatórios com três digitos
+      n2 = alea3();
+   } // fim if
+   // retornar o número 2
+   return n2;
+} // fim da função número 2
 
 // função mensagens ruins
 void msg_ruim( int msg )
@@ -327,31 +350,16 @@ int alea3()
    return 1 + rand() % 999;
 } // fim função
 
-// função somar
-int somar( int n1, int n2 )
-{
-   // retornar o valor da soma
-   return n1 + n2;
-} // fim função somar
-
-// função subtrair
-int subtrair( int n1, int n2 )
-{
-   // retornar o valor da subtração
-   return n1 - n2;
-} // fim função subtrair
-
-// função multiplicar
-int multi( int n1, int n2 )
-{
-   // retornar o valor da multiplicação
-   return n1 * n2;
-} // fim função num_aleatorio
-
 // função perguntar aguardando o nível
 int perguntar( int n1, int n2, char sinal )
 {
+   // variável
    int resp = 0; // receber resposta do usuário
+
+   // se n1 igual a n2
+   if( n1 == n2 && sinal == '-' )
+      // n2 recebe menos 1
+      n2 += -1;
 
    // entrada de dados
    printf( "\tQuanto é %d %c %d = ", n1, sinal, n2 );
@@ -397,3 +405,103 @@ void menu_misto()
    printf( "   *******************************\n" );
    printf( "   Qual a sua opção? " );
 } // fim função menu misto
+
+// função sinal
+// retornar o sinal aritimético
+char sinal( int opc )
+{
+   // variável para o sinal aritimético
+   char sn = ' ';
+
+   // escolher o sinal com base na opção
+   switch( opc )
+   {
+      case 1:
+         sn = '+';
+         break;
+      case 2:
+         sn = '-';
+         break;
+      case 3:
+         sn = 'x';
+         break;
+   } // fim switch
+   // retornar o sinal
+   return sn;
+} // fim função sinal
+
+// função escolha
+int escolha( int n1, int n2, int opc )
+{
+   int confere = 0; // a escolha aritimética
+
+   // chamar a vunção sinal
+   sinal( opc );
+
+   // atribuir a confere a opção aritimética escolhida
+   // escolha a opção
+   switch( opc )
+   {
+      case 1: // caso um
+         // o tipo é a soma
+         confere = n1 + n2;
+         break; // fim tipo
+      case 2: // caso dois
+         // se n1 igual a n2
+         if( n1 == n2 )
+            // n2 recebe menos 1
+            n2 += -1;
+         // o tipo é a subtração
+         confere = n1 - n2;
+         break; // fim tipo
+      case 3: // caso três
+         // o tipo é a multiplicação
+         confere = n1 * n2;
+         break; // fim tipo
+      } // fim switch
+      // retornar a escolha aritimética
+      return confere;
+} // fim função
+
+// função acertados
+void acertados( int certos, int erros )
+{
+   // verificar se certo é maior que 7
+   if( certos > 7 ) // se verdade
+   {
+      // imprimir
+      printf( "\nDe %d questões você acertou %d e errou %d\n",
+             certos + erros, certos, erros );
+      printf( "Parabéns, Você está pronto para o próximo nível!\n" );
+      printf( "Dê a vez ao próximo aluno.\n\ns" );
+      // zerar o contador certo
+      certos = 0;
+      // pausa o sistema
+      system( "pause" );
+      // limpar a tela
+      system( "cls" );
+
+   } // fim if certo > 7
+
+} // fim da função acertados
+
+// função errados
+void errados( int errou, int acertou )
+{
+   // verificar se errado é maior que 7
+   if( errou > 7 )
+   {
+      // imprimir
+      printf( "\nDe %d questões você acertou %d, errou %d\n",
+               acertou + errou, acertou, errou );
+      printf( "Por favor, peça ajuda a seu professor.\n" );
+      printf( "Dê a vez ao próximo aluno.\n\n" );
+      // zerar o contador errado
+      errou = 0;
+      // pausa o sistema
+      system( "pause" );
+      // limpar a tela
+      system( "cls" );
+   } // fim if
+
+} // fim da função errados
