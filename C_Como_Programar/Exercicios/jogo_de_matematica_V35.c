@@ -110,7 +110,7 @@ int main()
          // se a resposta for igual a escolha
          if( resp == escolha( n1, n2, seg_opc ) ) {
 
-            // boa mensagem para o aluno recebe valor aleatótio
+            // boa mensagem para o aluno recebe um valor aleatótio
             boa_msg = 1 + rand() % 4;
             // e chamar a função boas mensagens
             msg_boa( boa_msg );
@@ -119,6 +119,8 @@ int main()
             certo += 1;
             // chamar a função acertados
             acertados( certo,errado );
+            // zerando variável certo
+            if( certo > 7 ) certo = 0;
 
          } // fim if resposta igual a escolha
          else { // se não
@@ -129,6 +131,22 @@ int main()
 
             // enquanto a resposta for diferente da escolha repetir
             while( resp != escolha( n1, n2, seg_opc) ) {
+
+               // mensagem ruim recebe valor aleatório entre 1 e 4
+               ruim_msg = 1 + rand() % 4;
+               // chamar a função mensagens ruins que recebe como parametro um valor
+               msg_ruim( ruim_msg );
+
+               // contar quantas vezes errou
+               errado += 1;
+               // chamar a função errados
+               errados( errado, certo );
+               // se errado maior que 7 sair do while
+               if( errado > 7 ) {
+                  errado = 0;
+                  opc = 0;
+                  break;
+               } // fim if
 
                // resposta recebe o valor da função perguntar
                resp = perguntar( n1, n2, sinal( seg_opc ) );
@@ -181,6 +199,7 @@ int main()
 
             // chamar a função acertados
             acertados( certo, errado );
+
             // se certo maior que 7 sair do while
             if( certo > 7 ) {
                certo = 0;
@@ -369,7 +388,7 @@ int perguntar( int n1, int n2, char sinal )
    return resp;
 } // fim da função
 
-// função menu
+// função menu principal
 void menu()
 {
    // limpar a tela
@@ -474,8 +493,6 @@ void acertados( int certos, int erros )
              certos + erros, certos, erros );
       printf( "Parabéns, Você está pronto para o próximo nível!\n" );
       printf( "Dê a vez ao próximo aluno.\n\ns" );
-      // zerar o contador certo
-      certos = 0;
       // pausa o sistema
       system( "pause" );
       // limpar a tela
@@ -496,8 +513,6 @@ void errados( int errou, int acertou )
                acertou + errou, acertou, errou );
       printf( "Por favor, peça ajuda a seu professor.\n" );
       printf( "Dê a vez ao próximo aluno.\n\n" );
-      // zerar o contador errado
-      errou = 0;
       // pausa o sistema
       system( "pause" );
       // limpar a tela
