@@ -33,7 +33,7 @@ int main(void)
          num01, num02, num03, num04);
 
 	 //c) Quatro instruções printf.
-	 printf("\nQuatro instruções printf.\n%d", num01);
+	 printf("\nQuatro instruções printf:\n%d", num01);
 	 printf(" %d ", num02);
 	 printf(" %d ", num03);
 	 printf(" %d ", num04);
