@@ -19,7 +19,7 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // variável
-   char string[] = "caracteres e R$32,98"; // inicializa array de char
+   char string[] = "caracteres para conversão em maiúsculas e R$32,98"; // inicializa array de char
 
    // mostrar a string antes da conversão
    printf( "A string antes da conversão: %s\n", string );
@@ -42,10 +42,12 @@ void minusculaParaMaiuscula( char *sPtr )
       if( islower( *sPtr ) )
       {
          // ponteiro recebe maiúscula
+         // PONTEIRO RECEBE A FUNÇÃO TOUPPER DA BIBLIOTECA CTYPE
+         // QUE CONVERTE minúsculas EM MAIÚSCULAS
          *sPtr = toupper( *sPtr );
       } // fim if
 
-      ++sPtr;
+      ++sPtr; // contador para while
 
    }//fim enquanto
 } // fim função
