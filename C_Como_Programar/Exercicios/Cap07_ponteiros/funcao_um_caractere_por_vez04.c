@@ -36,7 +36,7 @@ int main()
 }// fim main
 
 // função minusculaParaMaiuscula
-void imprimindoCaracteres( char *sPtr )
+void imprimindoCaracteres( const char *sPtr )
 {
    // enquanto o ponteiro diferente de \0
    // loop para percprrer uma string
