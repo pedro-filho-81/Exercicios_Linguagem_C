@@ -1,6 +1,7 @@
 /*
    /* Fig. 7.7: fig07_07.c
    2 Cubo de uma variável usando chamada por referência.
+   3 Exemplo mostra a utilização dos operadores ( * ) e ( & )
    Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 212). Edição do Kindle.
    Pedro Filho 13/12/2020
 */
