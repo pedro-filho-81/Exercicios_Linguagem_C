@@ -12,7 +12,7 @@
 #include <ctype.h>
 
 // protótipo
-void imprimindoCaracteres( char *sPtr );
+void imprimindoCaracteres( const char *sPtr );
 
 int main()
 {
@@ -39,7 +39,7 @@ int main()
 void imprimindoCaracteres( const char *sPtr )
 {
    // enquanto o ponteiro diferente de \0
-   // loop para percprrer uma string
+   // loop para percorrer uma string
    for( ; *sPtr != '\0'; sPtr++ )
    {
       // imprimir
