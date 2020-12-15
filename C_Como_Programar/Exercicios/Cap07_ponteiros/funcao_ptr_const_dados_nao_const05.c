@@ -37,5 +37,6 @@ void f( const char *xPtr )
    // xPtr não pode ser usado para modificar
    // o valor da variável à qual ele aponta
    *xPtr = 100; // não pode modificar o objeto const
+   // esta tentativa causa erro na compilação
 
 } // fim função
