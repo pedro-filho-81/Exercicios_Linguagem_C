@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <time.h>
 
 #define LINHA 10
 #define COLUNA 3
@@ -40,6 +41,8 @@ int main()
    mostrar( matriz, LINHA, COLUNA );
 
    // CHAMAR a função verificar as notas
+   // para mostrar quantos alunos tiraram
+   // a pior nota em cada prova
    verificarNotas( matriz, LINHA, COLUNA );
 
    // pular uma linha
