@@ -87,6 +87,9 @@ int somarSemDiagonal( int mtz[][ COLUNA ], int linha, int coluna )
       for( int j = 0; j < coluna; j++)
       {
          // quando o valor da coluna for maior que a linha
+         // o sinal < ( menor que ) atinge os valores abaixo da diagonal principal
+         // o sinal > ( maior que ) atinge os valores acima da diagonal principal
+         // o sinal == ( igual ) faz referência a diagonal principal
          if( j > i )
             // somar os valores
             soma += mtz[ i ][ j ];
