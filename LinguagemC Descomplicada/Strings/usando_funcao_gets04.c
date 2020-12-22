@@ -1,5 +1,6 @@
 /*
-   Strings:  Usando a função gets()
+   Strings:  Usando a função gets() e fgets() para entrada
+   de string pelo usuário.
    Auto: Pedro Filho, 22/12/2020
 */
 
@@ -8,7 +9,7 @@
 #include <locale.h>
 #include <string.h>
 
-#define TAMANHO 20
+#define TAMANHO 30
 
 // FUNÇÃO PRINCIPAL
 int main()
@@ -33,9 +34,10 @@ int main()
 
    // ENtrada de dados
    printf( "Digite uma frase: " );
+   // limar o buffer do teclado
    fflush( stdin );
    // entrada do usuário
-   fgets( frase, 30, stdin );
+   fgets( frase, TAMANHO, stdin );
 
    // pular uma linha
    printf( "\n" );
