@@ -1,5 +1,5 @@
 /*
-   Strings:  copiando uma string a para uma string b
+   Strings:  copiando uma string A para uma string B
    Auto: Pedro Filho, 22/12/2020
 */
 
@@ -32,12 +32,12 @@ int main()
    // mostrando string digitada
    printf( "\nVocê digitou: %s\n", texto1 );
 
+   // copiando a string 1 para a string 2
    strcpy( texto2, texto1 );
 
    // copiando e mostrando a string 2
    printf( "\nEu sou a string2 que recebeu a cópia da string1"
           "\ncom strcpy( string2, string1): \n%s\n", texto2 );
-
 
    // pular uma linha
    printf( "\n" );
