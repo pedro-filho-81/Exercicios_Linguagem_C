@@ -41,7 +41,7 @@ int main()
    // chamar a função mostrar para exibir a matriz preenchida
    mostrar( matriz, LINHA, COLUNA );
 
-   // CHAMAR a função somar sem diagonal e armazenar o valor a variável soma
+   // CHAMAR a função somar abaixo  da diagonal e armazenar o valor a variável soma
    soma = somarAbaixoDiagonal( matriz, LINHA, COLUNA );
 
    // mostrar a soma
