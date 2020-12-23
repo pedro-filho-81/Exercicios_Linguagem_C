@@ -21,21 +21,25 @@ int main()
    char frase[ TAMANHO ];
 
    // ENtrada de dados
-   printf( "Digite uma frase: " );
+   printf( "Usando a função gets() - Digite uma frase: " );
+
    // limpar o buffer, para ser usado com a função gets()
    setbuf(stdin, NULL );
+
    // entrada do usuário
    gets( frase );
 
    // mostrar o resultado
    printf( "\nA melhor opção para a entrada de string pelo teclado \n"
-          "é usar a função gets() da biblioteca string.h");
+          "é usar a função gets() da biblioteca string.h e não scanf().");
    printf( "\nA frase digitada foi: %s\n", frase );
 
    // ENtrada de dados
-   printf( "Digite uma frase: " );
+   printf( "\nUsando afunção fgets() - Digite uma frase: " );
+
    // limar o buffer do teclado
    fflush( stdin );
+
    // entrada do usuário
    fgets( frase, TAMANHO, stdin );
 
@@ -45,7 +49,7 @@ int main()
    // mostrar o resultado
    printf( "\nA melhor opção para a entrada de string pelo teclado \n"
           "é usar a função fgets( nome do arrays, tamanho, stdin ) da biblioteca string.h\n");
-   printf( "\nA frase digitada foi: %s\n\n", frase );
+   printf( "\nA frase digitada foi: %s\n", frase );
 
    // pausar
    system( "pause" );
