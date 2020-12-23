@@ -36,7 +36,7 @@ int main () {
    strcat( destino, origem );
 
    // mostrar o destino após a concatenação
-   printf( "\nDestino apos concatenação:\n%s\n", destino  );
+   printf( "\nDestino depois concatenação:\n%s\n", destino  );
 
    // pausar o sistema
    system( "pause" );
