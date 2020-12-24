@@ -1,5 +1,5 @@
 /*
-   Strings: invertendo string com a função strrev( string )
+   Strings: Invertendo string com a função strrev( string )
    Auto: Pedro Filho, 23/12/2020
 */
 
