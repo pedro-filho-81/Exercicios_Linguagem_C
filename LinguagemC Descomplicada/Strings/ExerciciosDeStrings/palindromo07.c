@@ -23,7 +23,6 @@ int main()
 
    // vetor para string
    char texto[ TAMANHO ];
-   char inverte[ TAMANHO ];
    int tamanhoDoTexto = 0;
 
    //entrada de dados
