@@ -46,6 +46,9 @@ int main()
 
             // SE VERDADE contar as vogais
             contaVogais++;
+            // subistitua as vogais por
+            texto[ i ] = '#';
+
       } // fim if
    } // fim for
 
