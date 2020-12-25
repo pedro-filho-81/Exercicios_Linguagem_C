@@ -31,10 +31,8 @@ int main()
 
    //entrada de dados
    printf( "Digite o segundo ( texto, palavra ou frase ): " );
-
    // limpar o buffer
    setbuf( stdin, NULL );
-
    // ENTRADA DO USUÁRIO
    fgets( segundoTexto, TAMANHO, stdin );
 
@@ -51,6 +49,7 @@ int main()
    {
       printf( "Textos diferentes.\n" );
    }
+
    // pular uma linha
    printf( "\n" );
 
