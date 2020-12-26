@@ -1,11 +1,12 @@
 /*
-   Strings: A função da biblioteca C int memcmp
+   Strings 02: A função da biblioteca C int memcmp
    (const void * str1, const void * str2, size_t n))
    compara os primeiros n bytes da área de memória
    str1 e da área de memória str2
    Auto: Pedro Filho, 24/12/2020
 */
 
+// biblioteca
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -24,6 +25,9 @@ int main()
    char texto2[ TAMANHO ];
    int resposta;
 
+   // cabeçalho
+   printf( "{ COMPARANDO STRING }\n" );
+
    //entrada de dados
    printf( "Digite uma ( frase, palavra ou texto ): " );
    // limpar o buffer
@@ -40,6 +44,7 @@ int main()
    gets( texto2 );
 
    // resposta recebe um valor da função memcmp()
+   // MEMCMP( destino, origem, |quantidade de caracteres a pesquisar no destino| )
    resposta = memcmp( texto1, texto2, strlen( texto1 ) );
 
    // verificar se resposta é diferente de null
