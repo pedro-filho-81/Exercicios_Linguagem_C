@@ -1,5 +1,5 @@
 /*
-   Strings: A função da biblioteca C void * memcpy
+   Strings 03: A função da biblioteca C void * memcpy
    (void * dest, const void * src, size_t n) copia n
    caracteres da área de memória src para a área de memória dest
    Auto: Pedro Filho, 24/12/2020
