@@ -1,5 +1,5 @@
 /*
-   Strings: A função da biblioteca C void * memset
+   Strings 05: A função da biblioteca C void * memset
    (void * str, int c, size_t n) copia o caractere c
    (um caracter não assinado) para os primeiros n
    caracteres da string apontada, pelo argumento str
@@ -23,6 +23,9 @@ int main()
    char texto1[ TAMANHO ];
    char caractere;
    int resposta, quantidade;
+
+   // cabeçalho
+   printf( "{ INSERINDO CARACTERE NA STRING }\n" );
 
    //entrada de dados
    printf( "Digite uma ( frase, palavra ou texto ): " );
