@@ -1,5 +1,5 @@
 /*
-   Strings: A função da biblioteca C void * memmove
+   Strings 04: A função da biblioteca C void * memmove
    (void * str1, const void * str2, size_t n)
    copia n caracteres de str2 para str1 , mas para
    blocos de memória sobrepostos, memmove () é uma
