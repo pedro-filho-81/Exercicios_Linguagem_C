@@ -1,5 +1,5 @@
 /*
-   Strings: A função void * memchr da biblioteca C
+   Strings 01: A função void * memchr da biblioteca C
    (const void * str, int c, size_t n) procura a primeira
    ocorrência do caractere c (um caracter sem sinal) nos
    primeiros n bytes da string apontada, pelo argumento str
