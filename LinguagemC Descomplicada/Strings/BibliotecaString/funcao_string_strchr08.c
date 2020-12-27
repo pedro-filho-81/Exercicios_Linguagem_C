@@ -1,5 +1,5 @@
 /*
-   Strings:
+   Strings:  função strchr() pesquisa se existe uma caractere na string destino
    Auto: Pedro Filho, 24/12/2020
 */
 
@@ -42,12 +42,12 @@ int main()
    // verificar se resposta é diferente de null
    if( resposta != NULL ) { // se diferente
       // mostrar
-      printf( "O texto contem o caractere [ %c ]\n", caractere );
+      printf( "O texto |%s| contem o caractere pesquisado. [ %c ]\n", texto1, caractere );
    } // fim if resposta
 
    else { // se igual a NULL
-      // imprima
-      printf( "O texto não contem o caractere [ %c ]\n", caractere );
+      // imprima                                                              |
+      printf( "O texto |%s| não contem o caractere pesquisado. [ %c ]\n", texto1, caractere );
    } // fim else resposta
 
    // pular uma linha
