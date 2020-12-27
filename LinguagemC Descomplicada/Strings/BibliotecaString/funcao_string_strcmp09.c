@@ -18,8 +18,8 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // vetor para string
-   char texto1[ TAMANHO ];
-   char texto2[ TAMANHO ];
+   char destDaPesquisa[ TAMANHO ];
+   char oriDaPesquisa[ TAMANHO ];
    int resposta;
 
    // cabeçalho
@@ -30,29 +30,31 @@ int main()
    // limpar o buffer
    setbuf( stdin, NULL );
    // ENTRADA DO USUÁRIO
-   gets( texto1 );
+   gets( destDaPesquisa );
 
 
    //entrada de dados
-   printf( "Digite o caractere a ser pesquisado na string: " );
+   printf( "Digite uma string a ser pesquisado na string anterior: " );
    // limpar o buffer
    setbuf( stdin, NULL );
    // ENTRADA DO USUÁRIO
-   gets( texto2 );
+   gets( oriDaPesquisa );
 
    // resposta recebe um valor da função strcmp()
-   // STRCMP( destino, origem )
-   resposta = strcmp( texto1, texto2 );
+   // STRNCMP( destino, origem )
+   resposta = strncmp( destDaPesquisa, oriDaPesquisa, strlen( destDaPesquisa ) );
 
    // verificar se resposta é diferente de null
    if( resposta != NULL ) { // se diferente
       // mostrar
-      printf( "O texto1 |%s| contem o texto2 [ %s ]\n", texto1, texto2 );
+      printf( "O texto1 |%s| contem o texto pesquisado [ %s ]\n",
+             destDaPesquisa, oriDaPesquisa );
    } // fim if resposta
 
    else { // se igual a NULL
       // imprima
-      printf( "O texto1 |%s|  não contem o texto2 [ %s ]\n", texto1, texto2 );
+      printf( "O texto1 |%s|  não contem o texto pesquisado [ %s ]\n",
+             destDaPesquisa, oriDaPesquisa );
    } // fim else resposta
 
    // pular uma linha
