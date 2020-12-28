@@ -10,8 +10,9 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
+#include <time.h>
 
-#define TAMANHO 30
+#define TAMANHO 50
 
 // FUNÇÃO PRINCIPAL
 int main()
@@ -20,25 +21,33 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // vetor para string
-   char texto1[ TAMANHO ];
-   char texto2[ TAMANHO ];
-   char *resposta;
+   char origem[ TAMANHO ];
+   char destino[ TAMANHO ];
+   char resposta; // aguarda um retorno da função strcmp()
 
+
+   // entrada de dados
    printf( "Digite um texto, frase ou palavra: " );
-   fflush(stdin );
-   fgets( texto1, 30, stdin );
+   setbuf(stdin, NULL );   // limpa o buffer
+   gets( origem ); // entrada do usuário
 
 
+   // entrada de dados do usuário
    printf( "Digite uma palavra a pesquisar: " );
-   fflush(stdin );
-   fgets( texto2, 30, stdin );
+   setbuf(stdin, NULL ); // limpa o buffer
+   gets( destino ); // entrada do usuário
 
-   resposta = strstr( texto1, texto2 );
+   // agurada resultado da comparação po strcmp()
+   resposta = strcmp( destino, origem );
 
    // se a resposta for diferente de nulo
    if( resposta != NULL ){
-      printf( "%s está contido na farase %s\n", resposta, texto1 );
+      printf( "A string |%s| está contida an frase |%s|\n", destino, origem );
    } // fim if
+   else {
+      printf( "A string |%s| NÃO está contida na frase |%s|\n", destino, origem );
+   } // fim else
+
 
    // pular uma linha
    printf( "\n" );
