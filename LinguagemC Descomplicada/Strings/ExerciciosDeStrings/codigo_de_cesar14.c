@@ -28,19 +28,23 @@ int main()
    char texto1[ TAMANHO ];
    char texto2[ TAMANHO ];
 
-   // cabeçalho
-   printf( "{ STRING CÓDIGO DE CESAR }\n" );
-
    //entrada de dados
-   printf( "Digite uma ( texto ): " );
+   printf( "Digite uma palavra ou frase: " );
    // limpar o buffer
    setbuf( stdin, NULL );
    // ENTRADA DO USUÁRIO
    fgets( texto1, 100, stdin );
 
-   // imprimir
-   printf( "Texto original: %s\n", texto1 );
+   // limpar a tela
+   system( "cls" );
 
+   // cabeçalho
+   printf( "{ CODIFICAÇÃO E DECODIFICAÇÃO DO CÓDIGO DE CESAR }\n" );
+
+   // imprimir
+   printf( "\nTexto original: %s\n", texto1 );
+
+   //CODIFICAÇÃO
    // loop para aplicar o código de Cesar
    for( int i = 0; texto1[ i ] != '\0'; i++ )
    {
@@ -59,6 +63,24 @@ int main()
 
    // imprimir
    printf( "Código de Cesar: %s\n", texto2 );
+
+   // imprimir
+   printf( "DECODIFICAÇÃO - Código de Cesar: " );
+   // DECODIFICAÇÃO
+   // loop para decodificar o código de Cesar
+   for( int i = 0; texto2[ i ] != '\0'; i++ )
+   {
+      // se texto1 igual a espaço ou nova linha
+      if( texto2[ i ] == ' ' || texto2[ i ] == '\n' ) {
+         // imprima texto2
+         printf( "%c", texto2[ i ] );
+      } // fim if
+      // se não
+      else {
+         // imprima texto 2 menos 3
+         printf( "%c", texto2[ i ] - 3 );
+      } // fim else
+   } // fim for
 
    // pular uma linha
    printf( "\n" );
