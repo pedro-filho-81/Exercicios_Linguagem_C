@@ -48,7 +48,7 @@ int main()
 
    system( "cls" );
    // mostrar o resultado
-   printf( "Cadastro de pessoas." );
+   printf( "Cadastro de pessoas.\n" );
    printf( "Nome: %s\n", ps.nome );
    printf( "Endereço: %s\n", ps.endereco );
    printf( "Idade: %d\n", ps.idade );
