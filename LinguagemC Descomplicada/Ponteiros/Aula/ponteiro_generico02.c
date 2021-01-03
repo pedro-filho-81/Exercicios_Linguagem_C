@@ -58,7 +58,7 @@ int main()
       ponteiro ( int, char, float, etc ) use o TYPECAST
       Exp.: *(int *)pp
    */
-   printf( "\n*pp - Não Dá erro caso pessa para mostrar o valor usando "
+   printf( "\n*pp - Não Dá erro caso peça para mostrar o valor usando "
           "\no TYPECAST *(int, char, float, etc *)pp %d\n", *( int *) pp );
 
    // pular uma linha
