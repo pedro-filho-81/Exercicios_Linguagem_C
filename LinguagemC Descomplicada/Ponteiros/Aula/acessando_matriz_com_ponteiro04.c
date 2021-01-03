@@ -23,7 +23,7 @@ int main()
 
 
    // imprime
-   printf( "Mostrando a matriz usando o próprio nome da matriz num[ i ][ j ]\nnum = " );
+   printf( "Mostrando a matriz usando o próprio nome da matriz num[ i ][ j ]\nnum =\n" );
 
    // loop para mostrar o array num
    for( int i = 0; i < 3; i++ )
@@ -33,10 +33,13 @@ int main()
          // imprime a matriz num usando a própria matriz
          printf( "%d ", num[ i ][ j ] );
       } // fim for interno
-   } // fim for
+
+      // pular linha
+      printf( "\n" );
+   } // fim for externo
 
    // imprime
-   printf( "\n\nMostrando a matriz usando o ponteiro *( numPtr + i ): \nnumPtr = " );
+   printf( "\nMostrando a matriz usando o ponteiro *( numPtr + i ): \nnumPtr = " );
 
    // loop para mostrar a matriz num com o ponteiro numPtr
    for( int i = 0; i < 9; i++ )
