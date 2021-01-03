@@ -15,13 +15,20 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // ponteiro void
+   // ponteiro genérico permite
+   // guardar qualquer tipo de dado
    void *pp;
-   int *p1, p2 = 10;
 
-   // p1 recebe &p2
+   // ponteiro para inteiro
+   int *p1;
+
+   // variável recebe valor dez
+   int p2 = 10;
+
+   // p1 recebe endereço de &p2
    p1 = &p2;
 
-   // pp recebe &p2;
+   // pp recebe endereço de &p2;
    pp = &p2;
 
    // imprime p1
@@ -33,14 +40,14 @@ int main()
    // *p1 - imprimi valor de p2
    printf( "*p1 - mostra o valor de p2 %d\n", *p1 );
 
-    // pp recebe p1
+    // ponteiro pp recebe ponteiro p1
    pp = p1;
 
-   // pp - imprime o valor de p2
+   // pp - imprime o endereço de p1
    printf( "*pp - imprime o endereço de p1 %d\n", pp );
 
-   // *pp - DÁ ERRO caso pessa para imprimir
-   // por ser um ponteiro vazio recebe o endereço
+   // *pp - DÁ ERRO caso pessa para imprimir o valor
+   // por ser um ponteiro vazio ( void ) recebe o endereço
    // mas, o compilador não aceita que receba o valor
    printf( "*pp - Dá erro caso pessa para mostrar o valor %p\n", pp );
 
