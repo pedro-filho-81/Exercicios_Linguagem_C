@@ -17,6 +17,43 @@ int main()
    // configura para português Brasil
    setlocale( LC_ALL, "Portuguese" );
 
+   // cria o vetor
+   int vetor[ 5 ];
+
+   // cria o ponteiro para inteiro
+   // que recebe o endereço do vetor
+   int *vtrPtr = vetor;
+
+   // cria a variável
+   int dobro = 0;
+
+   // cabeçalho
+   printf( "ENTRADA DOS VALORES\n" );
+
+   // loop para adicionar valores ao vetor
+   for( int i = 0; i < 5; i++ )
+   {
+      // entrada de dados
+      printf( "Digite o %dº valor: ", i + 1 );
+      // entrada do usuário
+      scanf( "%d", &vetor[ i ] );
+
+   } // fim for
+
+   // cabeçalho
+   printf( "\nMOSTRA OS VALORES\n" );
+
+   // loop para calcular o dobro do valor dos elemsntos
+   // usando o ponteiro e imprimir os valores
+   for( int j = 0; j < 5; j++ )
+   {
+      // calcula o dobro do valor do vetor usando ponteiro
+      dobro = *( vtrPtr + j ) * 2;
+
+      // imprimi os valores usando o ponteiro
+      printf( "o dobro de %3d é %3d\n", *( vtrPtr + j ), dobro );
+   } // fim for
+
    // pular uma linha
    printf( "\n" );
 
