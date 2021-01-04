@@ -24,9 +24,6 @@ int main()
    // que recebe o endereço do vetor
    int *vtrPtr = vetor;
 
-   // cria a variável
-   int dobro = 0;
-
    // cabeçalho
    printf( "ENTRADA DOS VALORES\n" );
 
@@ -47,11 +44,8 @@ int main()
    // usando o ponteiro e imprimir os valores
    for( int j = 0; j < 5; j++ )
    {
-      // calcula o dobro do valor do vetor usando ponteiro
-      dobro = *( vtrPtr + j ) * 2;
-
       // imprimi os valores usando o ponteiro
-      printf( "o dobro de %3d é %3d\n", *( vtrPtr + j ), dobro );
+      printf( "o dobro de %3d é %3d\n", *( vtrPtr + j ), ( *( vtrPtr + j ) * 2 ) );
    } // fim for
 
    // pular uma linha
