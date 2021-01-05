@@ -33,6 +33,7 @@ int main()
 
    // cabeçalho
    printf( "PONTEIRO PARA PONTEIRO\n" );
+
    // entrada de dados
    printf( "Digite um valor: " );
    scanf( "%d", &num );
@@ -42,6 +43,7 @@ int main()
 
    // mostrar resultado
    printf( "Variável int num = %d\n", num );
+
    printf( "*numPtr1 = %d é o dobro de num e está no endereço numPtr1 %d\n",
           *numPtr1 * 2, numPtr1 );
 
