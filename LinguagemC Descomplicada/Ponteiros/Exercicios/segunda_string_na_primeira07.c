@@ -79,6 +79,7 @@ int pesquisar(char *string1, char *string2)
       while( (*(string1 + i)) == (*(string2 + j)) )
       {
          // incrementa i e j inicializados no for
+         // e servem como os contadores dos ponteiros
          i++;
          j++;
 
