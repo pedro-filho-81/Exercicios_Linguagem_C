@@ -43,6 +43,7 @@ int main()
 void mostrarString( char *texto )
 {
    // loop para mostra uma string
+   // usando aritimética de ponteiro
    for( int i = 0; *( texto + i ) != '\0'; i++ )
    {
       // imprima
