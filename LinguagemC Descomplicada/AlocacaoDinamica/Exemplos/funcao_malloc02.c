@@ -30,7 +30,7 @@ int main()
    printf( "\nmalloc() - A função retorna um ponteiro genérico, que é "
            "\n\tconvertido no tipo de ponteiro para inteiro "
            "\n\tvia [ type cast (int *) ]\n" );
-   printf( "\n5 *sizeof( int ) - alocando um vetor com 5 posições.\n" );
+   printf( "\n( 5 *sizeof( int ) ) - aloca um vetor com 5 posições.\n" );
    printf( "\nsizeof( int ) - A função mostra que o tipo inteiro usa "
            "\n\t 4 bytes da memoria.\n\n" );
 
