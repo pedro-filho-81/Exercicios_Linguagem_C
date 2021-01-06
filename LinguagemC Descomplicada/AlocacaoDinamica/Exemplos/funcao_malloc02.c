@@ -16,7 +16,7 @@ int main()
    // configura para português Brasil
    setlocale( LC_ALL, "Portuguese" );
 
-   // cria um ponteiro
+   // cria o ponteiro ptr
    int *ptr;
 
    // alocando o vetor ptr com 5 posições
@@ -37,14 +37,20 @@ int main()
 
    // cabeçalho
    printf( "\tALOCAÇÃO DINAMICA FUNÇÃO MALLOC()\n" );
+
    printf( "\n\tint *ptr; - cria o ponteiro ( ptr )\n");
+
    printf( "\tptr = ( int *) malloc( 5 *sizeof( int ) );\n" );
+
    printf( "\nO ponteiro ( ptr ) passa a ser tratado com vetor "
            "\n\tptr[ i ] no loop for.\n" );
+
    printf( "\nmalloc() - A função retorna um ponteiro genérico, que é "
            "\n\tconvertido no tipo de ponteiro para inteiro "
            "\n\tvia [ type cast (int *) ]\n" );
+
    printf( "\n( 5 *sizeof( int ) ) - aloca um vetor com 5 posições.\n" );
+
    printf( "\nsizeof( int ) - A função mostra que o tipo inteiro usa "
            "\n\t 4 bytes da memoria.\n\n" );
 
