@@ -8,7 +8,7 @@
 // biblioteca
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>3
+#include <locale.h>
 
 // FUNÇÃO PRINCIPAL
 int main()
@@ -26,7 +26,8 @@ int main()
    printf( "\tALOCAÇÃO DINAMICA FUNÇÃO MALLOC()\n" );
    printf( "\n\tint *ptr; - cria o ponteiro ( ptr )\n");
    printf( "\tptr = ( int *) malloc( 5 *sizeof( int ) );\n" );
-   printf( "\nO ponteiro ( ptr ) passa a ser tratado com vetor.\n" );
+   printf( "\nO ponteiro ( ptr ) passa a ser tratado com vetor "
+           "\n\tptr[ i ] no loop for.\n" );
    printf( "\nmalloc() - A função retorna um ponteiro genérico, que é "
            "\n\tconvertido no tipo de ponteiro para inteiro "
            "\n\tvia [ type cast (int *) ]\n" );
@@ -43,7 +44,7 @@ int main()
    } // fim for
 
    // mostrar valores do vetor
-   printf( "\nVetor = { " );
+   printf( "\nVetor ptr = { " );
 
    // loop para mostrar os dados do vetor
    for( int i = 0; i < 5; i++ )
