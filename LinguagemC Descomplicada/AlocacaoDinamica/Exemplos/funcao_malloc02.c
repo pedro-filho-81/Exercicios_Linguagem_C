@@ -22,6 +22,19 @@ int main()
    // alocando o vetor ptr com 5 posições
    ptr = ( int *) malloc( 5 *sizeof( int ) );
 
+   // verificar se tem memoria suficiente para alocação
+   // se o ponteiro prt igual a nulo
+   if( ptr == NULL )
+   {
+      // imprima
+      printf( "ERRO! Memoria insuficiente.\n" );
+      // pausa o sistema
+      system( "pause" );
+      // saia do programa
+      exit( 1 );
+
+   } // fim if
+
    // cabeçalho
    printf( "\tALOCAÇÃO DINAMICA FUNÇÃO MALLOC()\n" );
    printf( "\n\tint *ptr; - cria o ponteiro ( ptr )\n");
