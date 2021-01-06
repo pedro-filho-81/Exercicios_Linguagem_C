@@ -25,21 +25,24 @@ int main()
 
    // cabeçalho
    printf( "\nALOCAÇÃO DINAMICA FUNÇÃO SIZEOF()\n" );
-
+   printf( "Mostra o tamanho que o tipo usa "
+          "\nda memoria do computador quando declarado.\n" );
    // função sizeof() usada para saber o número de bits
    // para alocar um determinado elemento (valor)
    // sizeof( type, valor, etc )
-   printf( "sizeof( char ) o tipo char tem %d byte\n", sizeof( char ) );
-   printf( "sizeof( int  ) o tipo int tem %d bytes\n", sizeof( int ) );
-   printf( "sizeof( float ) o tipo float tem %d bytes\n", sizeof( float ) );
-   printf( "sizeof( double ) o tipo double tem %d bytes\n", sizeof( double ) );
-   printf( "sizeof( struct ponto ) o tipo struct ponto tem %d bytes\n",
+   printf( "sizeof( char ) o tipo char usa %d byte\n", sizeof( char ) );
+   printf( "sizeof( int  ) o tipo int usa %d bytes\n", sizeof( int ) );
+   printf( "sizeof( float ) o tipo float usa %d bytes\n", sizeof( float ) );
+   printf( "sizeof( double ) o tipo double usa %d bytes\n", sizeof( double ) );
+   printf( "sizeof( struct ponto ) o tipo struct ponto usa %d bytes\n",
           sizeof( struct ponto ) );
 
+   // cabeçalho
+   printf( "\nMOSTRANDO AS VARIÁVEIS DA ESTRUTURA" );
    // mostrar tamanho das variáveis da estrutura
-   printf( "\nsizeof( p.x ) o tipo int x tem %d bytes\n", sizeof p.x );
-   printf( "sizeof( p.y ) o tipo int y tem %d bytes\n", sizeof p.y );
-   printf( "sizeof( p.a ) o tipo char a[ 5 ] tem %d bytes\n", sizeof p.a );
+   printf( "\nsizeof( p.x ) o tipo int x usa %d bytes\n", sizeof p.x );
+   printf( "sizeof( p.y ) o tipo int y usa %d bytes\n", sizeof p.y );
+   printf( "sizeof( p.a ) o tipo char a[ 5 ] usa %d bytes\n", sizeof p.a );
 
    // pular uma linha
    printf( "\n" );
