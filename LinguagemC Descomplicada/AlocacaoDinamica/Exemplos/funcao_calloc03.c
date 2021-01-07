@@ -1,5 +1,6 @@
 /*
-   Alocação: A função CALLOC( ) - também serve para alocar memória durante a execução do programa.
+   Alocação: A função CALLOC( ) - também serve para alocar memória
+   durante a execução do programa.
    Backes, André. Linguagem C (p. 220). GEN LTC. Edição do Kindle.
    Auto: Pedro Filho, 06/01/2021
 */
@@ -27,6 +28,7 @@ int main()
       printf( "ERRO! Memoria insufuciente!\n" );
    } // fim if
 
+   // cria o segundo ponteiro
    int *ptr2;
 
    // cria um vetor para 50 elementos com calloc()
