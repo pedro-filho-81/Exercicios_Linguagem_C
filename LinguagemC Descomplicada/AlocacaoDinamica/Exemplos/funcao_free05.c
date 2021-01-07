@@ -52,6 +52,7 @@ int main()
 
    // libera memoria alocada
    free( ptr );
+   // PONTEIRO NULO OU VAZIO
    ptr = NULL;
 
    // pular uma linha
