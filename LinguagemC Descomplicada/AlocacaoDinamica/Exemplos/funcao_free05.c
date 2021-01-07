@@ -38,7 +38,7 @@ int main()
       ptr[ i ] = i + 1;
    } // fim for
 
-   // imprime
+   // MOSTRA VETOR
    printf( "\nptr = " );
    //loop para mostrar os valores do vetor
    for( i = 0; i < 50; i++ )
@@ -52,6 +52,7 @@ int main()
 
    // libera memoria alocada
    free( ptr );
+   ptr = NULL;
 
    // pular uma linha
    printf( "\n" );
