@@ -19,6 +19,13 @@ int main()
 
    // cria o ponteiro ptr para alocação com a função malloc
    int *ptr = ( int *) malloc( 50 * sizeof( int ) );
+
+   printf( "Cria o ponteiro ptr para alocação de 50 posições com a função malloc\n" );
+   printf( "int *ptr = ( int *) malloc( 50 * sizeof( int ) );\n" );
+
+   printf( "\nDepois verifica se tem memoria suficiente"
+         "\nif( ptr == NULL )n" );
+
    // verifica se tem memoria suficiente
    if( ptr == NULL )
    {
@@ -38,8 +45,10 @@ int main()
       ptr[ i ] = i + 1;
    } // fim for
 
+
    // MOSTRA VETOR
-   printf( "\nptr = " );
+   printf( "\nDepois mostra os valores de ptr:" );
+
    //loop para mostrar os valores do vetor
    for( i = 0; i < 50; i++ )
    {
