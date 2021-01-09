@@ -24,7 +24,7 @@ int main()
    printf( "int *ptr = ( int *) malloc( 50 * sizeof( int ) );\n" );
 
    printf( "\nDepois verifica se tem memoria suficiente"
-         "\nif( ptr == NULL )n" );
+         "\nif( ptr == NULL )\n" );
 
    // verifica se tem memoria suficiente
    if( ptr == NULL )
