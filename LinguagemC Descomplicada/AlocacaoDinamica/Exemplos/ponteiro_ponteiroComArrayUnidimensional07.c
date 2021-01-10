@@ -45,10 +45,11 @@ int main()
       {
          // imprimir
          printf( "%3d", ptr[ i ][ j ] );
-      }
+      } // fim for
+
       // pula linha
       printf( "\n" );
-   }
+   }  // fim for
 
    // libera memoria
    free( ptr );
