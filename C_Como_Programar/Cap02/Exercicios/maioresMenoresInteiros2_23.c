@@ -101,7 +101,7 @@ int main()
       maiorValor = n1;
    } // fim if externo
 
-   // mostrando o resultado
+   // mostrando o resultado1
    printf( "Maior valor é %d\n", maiorValor );
    printf( "Menor valor é %d\n", menorValor );
 
