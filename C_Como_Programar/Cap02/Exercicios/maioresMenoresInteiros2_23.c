@@ -23,7 +23,7 @@ int main()
    int menorValor = 0; // para o menor valor
 
    // entrada de dados
-   printf( "Digite 5 inteiros diferentes: " ); // prompt
+   printf( "Digite 5 inteiros diferentes maior que  0( zero ): " ); // prompt
    scanf( "%d%d%d%d%d", &n1, &n2, &n3, &n4, &n5 ); // do usuário
 
    // maior valor recebe o último inteiro
@@ -33,6 +33,7 @@ int main()
    // Quando o maior valor é o último
    // verificando o menor valor
     // 1 3 2 4 5
+   // neste case 1 será o menor valor
    if( n1 < n2 )
       menorValor = n1;
 
@@ -100,6 +101,7 @@ int main()
       maiorValor = n1;
    } // fim if externo
 
+   // mostrando o resultado
    printf( "Maior valor é %d\n", maiorValor );
    printf( "Menor valor é %d\n", menorValor );
 
