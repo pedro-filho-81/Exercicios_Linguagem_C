@@ -16,7 +16,7 @@
 int main(void)
 { // inicio de main
 
-   setloacle(LC_ALL, "Portuguese" );
+   setlocale( LC_ALL, "Portuguese" );
 
 	// Variáveis
 	int n;
@@ -27,11 +27,11 @@ int main(void)
 
 	// Verifica se o número digitado é par ou impar
 	if ( n % 2 == 0){
-		printf("%d e um numero par.", n);
+		printf("%d e um número par.", n);
 	} // fim if
 
 	if (n % 2 != 0){
-		printf("%d nao e um numero par.", n);
+		printf("%d nao e um número par.", n);
 	} // fim if
 
 	return 0; // programa finalizado com sucesso
