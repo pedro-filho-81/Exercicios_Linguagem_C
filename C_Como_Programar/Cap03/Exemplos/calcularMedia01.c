@@ -2,7 +2,7 @@
    Questão:  /* Figura 3.6: fig03_06.c  2 Programa de média da turma com
    repetição controlada por contador
    Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 54). Edição do Kindle.
-   Autor: Pedro Filho, 14/01/2021
+   Pedro Filho, 14/01/2021
 */
 
 // biblioteca
