@@ -26,7 +26,7 @@ int main()
    printf( "Digite a %dº nota [ -1 (sair) ]: ", contador + 1 ); // prompt
    scanf( "%d", &nota ); // lê nota do usuário
 
-   // enquanto contador menor igual a 10 faça
+   // enquanto nota diferente de -1 faça
    while( nota != -1 ) // loop
    {
       // calcular
