@@ -18,6 +18,8 @@
 
 // Incluir Biblioteca
 #include <locale.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // FUNÇÃO PRINCIPAL
 int main()
