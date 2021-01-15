@@ -56,8 +56,9 @@ int main()
 
       // calcular o consumo atual
       consumoAtual = kmDirigidos / litrosAbastecidos;
+
       // somar o consumo atual
-      consumoTotal += consumoAtual;
+      consumoTotal = totalKmRodados / somaAbastecimentos;
 
       // imprimir resultado
       printf( "O consumo atual de combustível é de %f Km / l\n\n", consumoAtual );
