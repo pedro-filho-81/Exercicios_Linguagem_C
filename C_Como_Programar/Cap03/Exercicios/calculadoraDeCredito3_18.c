@@ -74,7 +74,7 @@ int main()
       if( valorDosDebitos > limiteDeCredito ) { // se verdade
 
          // imprimir
-         printf( "COMPRAS NÃO APROVADAS!" );
+         printf( "COMPRAS NÃO APROVADAS!\n" );
       } // fim if
 
       // se não for
@@ -85,7 +85,7 @@ int main()
       } // fim else
 
       // entrada de dados
-      printf( "Informe o número da conta [ -1 para sair ]: " ); // prompt
+      printf( "\nInforme o número da conta [ -1 para sair ]: " ); // prompt
       scanf( "%d", &numContaCliente ); // entrada do usuário
 
    } // fim while
