@@ -29,6 +29,9 @@ int main()
    float percentualDasVendas = 0; // calcular os 9% sobre vendas brutas
    float pagamento = 0; // para calcular o valor da semana
 
+   // cabeçalho
+   printf( "PAGAMENTO COMISSÃO DAS VENDAS\n" );
+
    // entrada de dados
    printf( "Informe o valor das vendas brutas R$" );
    scanf( "%f", &vendasBrutas );
