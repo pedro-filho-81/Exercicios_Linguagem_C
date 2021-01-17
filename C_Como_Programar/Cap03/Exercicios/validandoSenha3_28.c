@@ -34,13 +34,21 @@ int main()
 
       // se senha igual a 1
       if( senhaValida == 1 ) {
+
+         // imprima
          printf( "Senha válida!\n" );
+
+         // coloca o contador em 10 e sai do rograma
          contador += 10;
       } // fim if
 
       // se senha igual a 1
       if( senhaValida == 2 ) {
+
+         // imprima
          printf( "Senha válida!\n" );
+
+         // coloca o contador em 10 e sai do programa
          contador += 10;
       } // fim if
 
