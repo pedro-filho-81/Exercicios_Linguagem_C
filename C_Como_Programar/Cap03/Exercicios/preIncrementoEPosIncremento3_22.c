@@ -20,19 +20,19 @@ int main()
    // variável
    int num = 10;
 
-   // imprime pré-Incremento
-   printf( "\tPRÉ-INCREMENTO PÓS-INCREMENTO\n" );
+   // imprime pré-Decremento
+   printf( "\tPRÉ-DECREMENTO versus PÓS-DECREMENTO\n" );
    printf( "int num = 10 - cria a variável.\n" );
    printf( "Imprime a variável num = %d\n", num );
-   printf( "Imprimindo variável usando o pré-incremento ( ++num ) num = %d\n", ++num );
-   printf( "Com o pré-incremento a variável começa com +1\n\n" );
+   printf( "Variável num após pré-decremento ( --num ) num = %d\n", --num );
+   printf( "Com o pré-decremento a variável começa com -1\n\n" );
 
    // atribuindo 10 a num
    num = 10;
    // imprimindo
    printf( "int num = 10 - cria a variável.\n" );
    printf( "Imprime a variável num = %d\n", num );
-   printf( "imprimindo variável usando o pós-incremento ( num++ ) num = %d\n", num++ );
+   printf( "Variável num após pós-decremento ( num-- ) num = %d\n", num-- );
    printf( "Com o pós-incremento a variável começa com o mesmo valor.\n\n" );
    // pausar
    system( "pause" );
