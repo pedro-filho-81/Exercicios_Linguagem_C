@@ -19,23 +19,35 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // cria variável senha
-   int senhaValida = 12534; // senha válida 12534
+   int senhaValida = 0; // senha válida 1 ou 2
+   int contador = 1;
 
    // cabeçalho
-   printf( "\tSENHA CORRETA" );
-
-   // entrada de dados
-   printf( "\nDigite sua senha de 5 digitos: " );
-   scanf( "%d", &senhaValida );
+   printf( "\tSENHA CORRETA\n" );
 
    // enquanto senha diferente de 12534 faça
-   while( senhaValida != 12534 ) {
+   while( contador <= 10 ) {
 
       // entrada de dados
-      printf( "\nDigite sua senha de 5 digitos: " );
+      printf( "\nDigite o número 1 ou 2: " );
       scanf( "%d", &senhaValida );
 
-   } // fim while
+      // se senha igual a 1
+      if( senhaValida == 1 ) {
+         printf( "Senha válida!\n" );
+         contador += 10;
+      } // fim if
+
+      // se senha igual a 1
+      if( senhaValida == 2 ) {
+         printf( "Senha válida!\n" );
+         contador += 10;
+      } // fim if
+
+      // contador
+      contador++;
+
+} // fim while
 
    // pausar
    system( "pause" );
