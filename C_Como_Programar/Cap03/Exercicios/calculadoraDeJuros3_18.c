@@ -27,6 +27,9 @@ int main()
    float juros = 0; // para os juros
    float prazoParaPagar = 0; // prazo para o pagamento do empréstimo
 
+   // cabeçalho
+   printf( "CALCULADORA DE JUROS SIMPLES\n" );
+
    // entrada de dados
    printf( "Informe o valor principal do empréstimo [-1 para sair] R$" ); // prompt
    scanf( "%f", &valorDoEmprestimo );
