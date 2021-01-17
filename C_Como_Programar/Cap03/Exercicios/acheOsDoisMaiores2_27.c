@@ -18,9 +18,9 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // cria variáveis
-   int num;
-   int primeiroMaior;
-   int segundoMaior;
+   int num = 0;
+   int primeiroMaior = 0;
+   int segundoMaior = 0;
    int contador = 1;
 
    // cabeçalho
@@ -34,29 +34,40 @@ int main()
       printf( "Digite um valor: " );
       scanf( "%d", &num );
 
-      // se contador igual a 1
+      // se o contador igual a 1
       if( contador == 1 ) {
 
-         // primeiro e segundo maior recebe num
+         // primeiro recebe num e
          primeiroMaior = num;
-         segundoMaior = num;
 
+         // segundo recebe num
+         segundoMaior = num;
       } // fim if
 
       // se num maior que primeiro maior
       if( num > primeiroMaior ) {
+
+         // segundo recebe primeiro;
+         segundoMaior = primeiroMaior;
 
          // primeiro maior recebe num
          primeiroMaior = num;
 
       }  // fim if externo
 
-      if( num < primeiroMaior ) // se num menor que primeiro
-         if( primeiroMaior >= segundoMaior ) // se primeiro maior ou igual ao segundo
-            if( segundoMaior > num ) // se o segundo for maior que num
+      // se o primeiro igual ao segundo e
+      if( primeiroMaior == segundoMaior )
+         // se num menor que o primeiro
+         if( num < primeiroMaior )
+            // segundo recebe número
+            segundoMaior = num;
 
-               // se
-               segundoMaior = num;
+      // se num menor que o primeiro e
+      if( num < primeiroMaior )
+         // num maior que o segundo
+         if( num > segundoMaior )
+            // segundo recebe num
+            segundoMaior = num;
 
       // incremanta contador
       contador++;
