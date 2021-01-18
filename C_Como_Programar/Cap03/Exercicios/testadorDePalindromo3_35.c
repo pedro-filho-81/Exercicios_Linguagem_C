@@ -24,7 +24,6 @@ int main()
    // cria variáveis
    int numero = 0; // para entrada do usuário
    int n1, n2, n3, n4, n5; // variáveis para separar o número digitado
-   int numeroInvertido = 0; // para receber os números separados
 
    // cabeçalho
    printf( "SERÁ QUE O NÚMERO É UM PALÍNDROMO?\n" );
@@ -44,10 +43,10 @@ int main()
    printf( "O número: %d %d %d %d %d\n", n5, n4, n3, n2, n1 );
 
    // se n5 igual a n1
-   if( n5 == n1 )
+   if( n1 == n5 )
        printf( "" );
       // se n4 igual a n2
-      if( n4 == n2 )
+      if( n2 == n4 )
          // imprime
          printf( "É um palíndromo.\n" );
       // se não
