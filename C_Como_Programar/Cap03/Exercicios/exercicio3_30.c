@@ -37,6 +37,7 @@ int main()
 
       // decrementa linha
       linha--;
+      printf( "\n" ); // pular linha
 
    } // fim while linha
 
