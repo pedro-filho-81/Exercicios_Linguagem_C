@@ -21,6 +21,9 @@ int main()
    // cria variável
    int contador = 0;
 
+   // COlocar cores nas letras e tela
+   system( "color 2");
+
    // cabeçalho
    printf( "QUADRADO DE ASTERISCO\n" );
 
