@@ -57,7 +57,7 @@ int main()
          sete += 1;
 
    // mostra resultado
-   printf( "o número %d tem %d números 7\n\n", pegaNumero, sete );
+   printf( "o número %d tem %d ( 7 )\n\n", pegaNumero, sete );
 
    // pausar
    system( "pause" );
