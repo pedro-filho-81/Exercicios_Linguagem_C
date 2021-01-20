@@ -19,20 +19,20 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // cria variável
+   int multiplos = 2;
    int contador = 2;
 
+   // imprima 2
+   printf( "2 " );
+
    // LOOP INFINITO DOS MULTIPLOS DE 2
-   // enquanto contador for multiplos de dois faça
    while( 1 ) {
 
-      if ( contador % 2 == 0 ) {
+      // calcúlo dos multiplos conforme exemplo.
+      multiplos *= contador;
 
-      // imprima contador
-      printf( "%d ", contador * contador );
-
-      }
-      // contador recebe dois
-      contador += 2;
+      // imprima os multiplos
+      printf( "%d ", multiplos );
 
    } // fin while
 
