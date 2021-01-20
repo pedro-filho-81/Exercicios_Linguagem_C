@@ -23,11 +23,14 @@ int main()
 
    // LOOP INFINITO DOS MULTIPLOS DE 2
    // enquanto contador for multiplos de dois faça
-   while( contador % 2 == 0 ) {
+   while( 1 ) {
+
+      if ( contador % 2 == 0 ) {
 
       // imprima contador
-      printf( "%d ", contador );
+      printf( "%d ", contador * contador );
 
+      }
       // contador recebe dois
       contador += 2;
 
