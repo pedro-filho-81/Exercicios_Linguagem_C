@@ -22,7 +22,7 @@ int main()
    int contador = 0;
 
    // COlocar cores nas letras e tela
-   system( "color 2");
+   system( "color 2"); // aqui tela preta com letras verdes
 
    // cabeçalho
    printf( "QUADRADO DE ASTERISCO\n" );
