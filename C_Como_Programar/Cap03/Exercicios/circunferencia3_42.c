@@ -49,6 +49,7 @@ int main()
       // entrada de dados
       printf( "\nDigite o raio da circunfrência [-1 para sair]: " );
       scanf( "%d", &raio );
+
    } // fim while
 
    // pausar
