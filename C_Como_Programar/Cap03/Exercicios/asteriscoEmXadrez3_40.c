@@ -28,10 +28,10 @@ int main()
    // enquanto linha menor ou igual a 10 faça
    while( linha <= 10 ) {
 
-      // se linha par
-      if( linha % 2 == 0 )
+      // verifica se a linha é par
+      if( linha % 2 == 0 ) // se verdade
 
-         // imprima um espaço primeiro
+         // imprima um espaço em branco primeiro
          printf( " " );
 
       // enquanto coluna menor ou igual a 10 faça
@@ -45,7 +45,7 @@ int main()
 
       } // fim while coluna
 
-      // reinicializa coluna
+      // reinicializa coluna com 1
       coluna = 1;
 
       // pule uma linha
