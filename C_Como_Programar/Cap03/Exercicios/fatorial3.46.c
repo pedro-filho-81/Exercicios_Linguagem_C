@@ -20,30 +20,44 @@ int main()
    int contador = 1;
    int fatorial = 1;
    int num = 0;
+   int resposta = 0;
 
    // cabeçalho
    printf( "\tFATORIAL\n" );
 
-   // entrada de dados
-   printf( "Digite um número para ver seu fatorial: " );
-   scanf( "%d", &num );
+   // enquanto resposta diferente de -1 faça
+   while( resposta != -1 ) {
 
-   // imprima
-   printf( "O fatorial de %d! é ", num );
+      // entrada de dados
+      printf( "Digite um número para ver seu fatorial: " );
+      scanf( "%d", &num );
 
-   // enquanto contador menor que num faça
-   while( contador <= num ) {
+      // imprima
+      printf( "O fatorial de %d! é ", num );
 
-      //calcular o fatorial
-      fatorial *= contador;
+      // enquanto contador menor que num faça
+      while( contador <= num ) {
 
-      // incrementa contador em 1
-      contador++;
+         //calcular o fatorial
+         fatorial *= contador;
 
-   }  // fim while
+         // incrementa contador em 1
+         contador++;
 
-   // imprime o fatorial
-   printf( "%d\n\n", fatorial );
+      }  // fim while interno
+
+      // imprime o fatorial
+      printf( "%d\n\n", fatorial );
+
+      // reinicializando o fatorial
+      fatorial = 1;
+      contador = 1;
+
+      // perguntar se que continuar
+      printf( "Quer continuar [-1 sair / 1 não]? " );
+      scanf( "%d", &resposta );
+
+   } // fim while externo
 
    // pausar
    system( "pause" );
