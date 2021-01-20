@@ -26,6 +26,7 @@ int main()
    printf( "Digite os 3 lados do triângula: " );
    scanf( "%d%d%d", &ladoA, &ladoB, &ladoC );
 
+
    // se ladoA menos ladoB menor que ladoC
    if( (ladoB + ladoC ) > ladoA )
 
