@@ -49,7 +49,7 @@ int main()
       // imprime o fatorial
       printf( "%d\n\n", fatorial );
 
-      // reinicializando o fatorial
+      // reinicializando o fatorial e o contador
       fatorial = 1;
       contador = 1;
 
