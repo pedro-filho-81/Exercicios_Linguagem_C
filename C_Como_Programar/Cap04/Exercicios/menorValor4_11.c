@@ -31,7 +31,7 @@ int main()
       for( i = 1; i <= contador; i ++ ) {
 
          // entrada dos valores
-         printf( "Digite os valores: " );
+         printf( "Digite um valores: " );
          scanf( "%d", &numero );
 
          // se i igual a 1
