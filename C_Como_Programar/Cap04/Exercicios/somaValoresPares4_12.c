@@ -25,10 +25,10 @@ int main()
    // loop para contar números
    for( int i = 2; i <= 30; i++ ) {
 
-      // se valor o valor é par
+      // se o valor for par
       if( i % 2 == 0 ) {
 
-         // imprima
+         // imprima o valor
          printf( "%d ", i );
 
          // somar valores
