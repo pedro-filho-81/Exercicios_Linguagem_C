@@ -19,7 +19,7 @@ int main()
 
       // variáveis
       int numero;
-      int maior = 0;
+      int menor = 0;
       int contador = 0;
       int i;
 
@@ -37,19 +37,19 @@ int main()
          // se i igual a 1
          if( i == 1 ) {
 
-            // maior recebe o número
-            maior = numero;
+            // menor recebe o número
+            menor = numero;
          } // fim if
 
-         // se número maior que maior
-         if( numero >= maior ) {
+         // se número menor que menor
+         if( numero < menor ) {
 
-            // maior recebe o número
-            maior = numero;
+            // menor recebe o número
+            menor = numero;
          } // fim if
 
       } // fim for
 
-      printf( "O maior valor é %d\n\n", maior );
+      printf( "O menor valor é %d\n\n", menor);
 
 }  // fim main
