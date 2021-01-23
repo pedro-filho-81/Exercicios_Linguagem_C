@@ -17,7 +17,7 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // variável
-   int produto = 0;
+   int produto = 1;
 
    // imprima
    printf( "Valores ímpares: " );
