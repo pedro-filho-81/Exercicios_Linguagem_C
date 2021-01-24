@@ -33,13 +33,13 @@ int main()
       // loop for para calcular o fatorial
       for( i = 1; i <= j; i++ ) {
 
-         // calcular o fatorial
+         // calcula o fatorial
          fatorial *= i;
 
       } // fim for interno
 
-      // imprima o número o o fatorial
-      printf( "%7d!   =  %7d<\n", j, fatorial );
+      // imprima o número e o fatorial
+      printf( "%7d!   =  %7d\n", j, fatorial );
 
       // inicializa o fatorial
       fatorial = 1;
