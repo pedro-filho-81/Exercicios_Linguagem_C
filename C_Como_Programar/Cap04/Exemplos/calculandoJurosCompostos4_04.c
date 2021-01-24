@@ -25,7 +25,7 @@ int main()
    // cabeçalho
    printf( "%4s%21s", "Ano", "Valor da conta\n" );
 
-   // loop paara calcular o valor em depósito pelos 10 anos
+   // loop para calcular o valor em depósito pelos 10 anos
    for( ano = 1; ano <= 10; ano++ ) {
 
       // calcula novo valor para cada ano especificado
