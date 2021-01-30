@@ -1,22 +1,25 @@
 /*
-   Questão:
+   QuestÃ£o: 4.26 Calculando o valor de p. Calcule o valor de p a  partir
+   da sÃ©rie infinita  p = âˆ’4 +âˆ’+âˆ’ +  4  3  4  5  4  7  4  9  4  11  ...
+   Imprima uma tabela que mostre o valor de p aproximado por um termo dessa
+   sÃ©rie, e depois por dois termos,  trÃªs termos, e assim por diante.
+   Quantos termos dessa sÃ©rie vocÃª precisa usar antes de obter 3,14?
+   3,141?  3,1415? 3,14159?
+   Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 110). EdiÃ§Ã£o do Kindle.
    Autor: @Pedro Filho, 18/01/2021
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 #include <math.h>
 
-/*Exercício 4.26 Calculando o Valor de PI,
-Livro C como programar, Deitel;
-Pedro Filho, 07/05/2020*/
+int main() { // inÃ­cio main
 
-int main() { // início main
-
-	//Define para Português Brasil
+	//Define para PortuguÃªs Brasil
 	setlocale(LC_ALL, "");
 
-	// variáveis
+	// variÃ¡veis
 	 double pi = 0;
 	 int contador = 0;
 
@@ -32,12 +35,12 @@ int main() { // início main
          // imprima o contador
          printf( "Contador = %d\n", contador );
 
-         // imprima o número do loop e o valor do pi
+         // imprima o nÃºmero do loop e o valor do pi
          printf( "i = %d - PI = %.8lf\n", i, pi );
 
       } // fim if
 
-      // se não
+      // se nÃ£o
       else {
          // calcular o valor de pi
          pi -= 4 / ( double ) i;
@@ -45,7 +48,7 @@ int main() { // início main
          // mostrar o contador
          printf( "Contador = %d\n", contador );
 
-         // imprima o índice e o valor de pi
+         // imprima o Ã­ndice e o valor de pi
          printf( "i = %d - PI = %.8lf\n", i, pi );
 
       } // fim else
