@@ -22,10 +22,10 @@
    Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 110). Edição do Kindle.
    Autor: @Pedro Filho, 30/01/2021
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <math.h>
 
 int main() { // início main
 
@@ -50,20 +50,20 @@ int main() { // início main
 
    // FÓRMULA DE EUCLIDES
 	//Triplas de Pitágoras
-  for(int i = 1; i <= 5; i++){
+  for(int i = 1; i <= 50; i++){
 
     m = i; // m recebe i
 
-    for(int j = 1; j <= 5; j++){
+    for(int j = 1; j <= 50; j++){
 
       n = j; // n recebe j
 
-      // calcula usando a fórmula de Euclides
-      a = pow( m, 2 ) - pow( n, 2 ); // encontra cateto a
+      // calcular usando a fórmula de Euclides
+      a = ( m * m ) - ( n * n ); // encontra cateto a
 
       b = 2 * m * n; // encontra cateto b
 
-      c = pow( m, 2 ) + pow( n , 2 ); // encontra a hipotenusa
+      c = ( m * m ) + ( n * n ); // encontra a hipotenusa
 
       // se a, b e c maior que zero imprima
       if( a > 0 && b > 0 && c > 0 )
