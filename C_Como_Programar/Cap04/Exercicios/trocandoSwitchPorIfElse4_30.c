@@ -32,10 +32,10 @@ int main()
    int fContar = 0;
 
    // imprime
-   printf( "Digite as nots em letra.\n" );
+   printf( "Digite as notas em letra.\n" );
    printf( "Digite o caractere EOF para sair do programa. \n" );
 
-   // loop while até encontrar EOF ( ctrl z )
+   // loop while até encontrar EOF = ( ctrl z )
    while( ( nota = getchar() ) != EOF ) {
 
       // se a ou A
@@ -49,7 +49,7 @@ int main()
    } // fim while
 
    // mostrar resultado
-   printf( "Totais para cada nota digiteda:\n" );
+   printf( "Totais para cada nota digitada:\n" );
    printf( "A = %d\n", aContar );
    printf( "B = %d\n", bContar );
    printf( "C = %d\n", cContar );
