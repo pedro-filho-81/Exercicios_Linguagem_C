@@ -65,7 +65,7 @@ int main()
          printf( "*" );
       } // fim for asterisco
 
-      // loop para
+      // loop para asterisco
       for( j = i; j <= 3; j++ ) {
 
          // imprime
