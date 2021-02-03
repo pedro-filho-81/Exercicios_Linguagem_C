@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1612380653 source:c:\users\samsung\documents\github\exercicios_linguagem_c\c_como_programar\cap05\exemplos\exemploscap05\funcaoquadrada5_3.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
