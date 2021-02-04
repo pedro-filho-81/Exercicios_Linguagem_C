@@ -113,7 +113,7 @@ int rolarDados( void )
    int dado2 = 0;
    int somaDosDados = 0;
 
-   // dados recebem valores aleatórios
+   // dados recebem valores aleatórios entre 1 e 6
    dado1 = 1 + rand() % 6;
    dado2 = 1 + rand() % 6;
 
@@ -121,7 +121,7 @@ int rolarDados( void )
    somaDosDados = dado1 + dado2;
 
    // imprimir
-   printf( "%d + %d = %d\n", dado1, dado2, somaDosDados );
+   printf( "Jogador rolou: %d + %d = %d\n", dado1, dado2, somaDosDados );
 
    // retornar a soma
    return somaDosDados;
