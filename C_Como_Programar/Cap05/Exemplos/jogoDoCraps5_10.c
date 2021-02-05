@@ -73,6 +73,7 @@ int main()
          // jogo termina e o jogador vence
          statusDoJogo = VENCEU;
       } // FIM IF
+
       // se não
       else {
          // se soma igual a sete
@@ -88,6 +89,7 @@ int main()
       // IMPRIMA
       printf( "Você VENCEU!\n" );
    } // fim if
+
    // se não
    else {
       // imprima
