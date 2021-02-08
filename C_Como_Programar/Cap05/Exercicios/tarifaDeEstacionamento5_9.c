@@ -33,9 +33,13 @@ int main()
    int Carro1 = 0;
    int Carro2 = 0;
    int Carro3 = 0;
+
+   float resp1, resp2, resp3;
    float tempoCarro1 = 0;
    float tempoCarro2 = 0;
    float tempoCarro3 = 0;
+   float somaTempo = 0;
+   float somarTaxa = 0;
 
    // cabeçalho
    printf( "TARIFA DE ESTACIONAMENTO\n" );
@@ -61,6 +65,14 @@ int main()
    printf( "Informe às horas de permanência: " );
    scanf( "%f", &tempoCarro3 );
 
+   // resp recebe calcularTaxa
+   resp1 = calcularTaxa( tempoCarro1 );
+   resp2 = calcularTaxa( tempoCarro2 );
+   resp3 = calcularTaxa( tempoCarro3 );
+
+   // somar os valores
+   somarTaxa = resp1 + resp2 + resp3;
+
    // cabeçalho
    printf( "RESULTADO\n" );
 
@@ -69,15 +81,21 @@ int main()
 
    // mostrar resultado
    printf( "%2d%12.1f%10.2f\n",
-          Carro1, tempoCarro1, calcularTaxa( tempoCarro1 ) );
+          Carro1, tempoCarro1, resp1 );
 
    printf( "%2d%12.1f%10.2f\n",
-          Carro2, tempoCarro2, calcularTaxa( tempoCarro2 ) );
+          Carro2, tempoCarro2, resp2 );
 
    printf( "%2d%12.1f%10.2f\n",
-          Carro3, tempoCarro3, calcularTaxa( tempoCarro3 ) );
+          Carro3, tempoCarro3, resp3 );
 
-   // pular linha
+   // calcular o tempo
+   somaTempo = tempoCarro1 + tempoCarro2 + tempoCarro3;
+
+   // mostrar a soma do tempo
+   printf( "\n%2s%9.1f%10.2f\n", "TOTAL", somaTempo, somarTaxa );
+
+   // pular linh
    printf( "\n" );
 
    // pausar
