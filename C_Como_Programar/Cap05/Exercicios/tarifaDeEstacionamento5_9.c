@@ -62,7 +62,7 @@ int main()
    printf( "Informe o carro: " );
    scanf( "%d", &Carro3 );
 
-   printf( "Informe às horas de permanência: " );
+ *           *9   printf( "Informe às horas de permanência: " );
    scanf( "%f", &tempoCarro3 );
 
    // resp recebe calcularTaxa
@@ -72,6 +72,9 @@ int main()
 
    // somar os valores
    somarTaxa = resp1 + resp2 + resp3;
+
+   // calcular o tempo
+   somaTempo = tempoCarro1 + tempoCarro2 + tempoCarro3;
 
    // cabeçalho
    printf( "RESULTADO\n" );
@@ -89,11 +92,8 @@ int main()
    printf( "%2d%12.1f%10.2f\n",
           Carro3, tempoCarro3, resp3 );
 
-   // calcular o tempo
-   somaTempo = tempoCarro1 + tempoCarro2 + tempoCarro3;
-
    // mostrar a soma do tempo
-   printf( "\n%2s%9.1f%10.2f\n", "TOTAL", somaTempo, somarTaxa );
+   printf( "\n%s%9.1f%10.2f\n", "TOTAL", somaTempo, somarTaxa );
 
    // pular linh
    printf( "\n" );
