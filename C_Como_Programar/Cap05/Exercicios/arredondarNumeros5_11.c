@@ -83,13 +83,13 @@ float arredondaDecimo( float numero )
 // função arredondaCentésimo
 float arredondaCentesimo( float numero )
 {
-   // retorna décimo
+   // retorna centésimo
    return ( numero * 100 + 5 ) / 100;
 } // fim function
 
 // função arredonda Milésimo
 float arredondaMilesimo( float numero )
 {
-   // retorna décimo
+   // retorna o milésimo
    return ( numero * 1000 + 5 ) / 1000;
 } // fim function
