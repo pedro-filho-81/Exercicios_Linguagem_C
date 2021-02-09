@@ -25,7 +25,7 @@ int main()
 
    // variáveis
    float x = 1;
-   int y = 0;
+   float y = 0;
 
 
    // entrada de dados
@@ -35,10 +35,10 @@ int main()
    while( x > 0 ) {
 
       // arredondar o valor de x
-      y = ( x + 0.5 );
+      y = floor( x + 0.5 );
 
       // mostrar resultado
-      printf( "O número arredondado de %.2f é %d\n", x, y );
+      printf( "O número arredondado de %f é %f\n", x, y );
 
       // entrada de dados
       printf( "Digite um número qualquer [ - 1 sair ]: " );
