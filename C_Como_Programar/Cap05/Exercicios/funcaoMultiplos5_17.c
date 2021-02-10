@@ -23,9 +23,10 @@ int main()
    setlocale( LC_ALL, "Portuguese" );
 
    // variáveis
-   int num1, num2;
-   int resposta;
+   int num1, num2; // recebe os valores
+   int resposta; // recebe a função
 
+   // cabeçalho
    printf( "MULTIPLOS\n" );
 
    // entrada de dados
@@ -35,11 +36,20 @@ int main()
    printf( "Segundo número: " );
    scanf( "%d", &num2 );
 
-   resposta = multiplos( num2, num1 );
+   // mostra o cáculo
+   printf( "%d %% %d = %d\n", num2, num1, num2 % num1 );
 
+   // resposta chama a função e recebe o valor retornado
+   resposta = multiplos( num1, num2 );
+
+   // se a resposta for 1
    if( resposta == 1 )
+      // imprime que é multiplo
       printf( "%d é multiplo de %d\n", num2, num1  );
+
+   // se não
    else
+      // imprime que não é multiplo
       printf( "%d NÃO é multiplo de %d\n.", num2, num1 );
 
    // pular linha
@@ -56,12 +66,16 @@ int main()
 // função multiplos
 int multiplos( int num1, int num2 )
 {
-   // se num1
-   if( num2 % num1 != 0 ){
+   // se num2 for multiplo de num1
+   if( ( num2 % num1 ) == 0 ){
       // retorne 1
       return 1;
-   }
+   } // fim if
+
+   // se não
    else {
+      // retorne 0
       return 0;
-   }
+   }// fim else
+
 } // fim da função
