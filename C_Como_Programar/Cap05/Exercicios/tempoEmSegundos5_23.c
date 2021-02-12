@@ -77,7 +77,7 @@ int main()
              horas, minutos, segundos, soma );
    }
 
-   // se horas igual a 12
+   // se horas igual a 24
    if( horas == 24 ) {
 
       // calcular
