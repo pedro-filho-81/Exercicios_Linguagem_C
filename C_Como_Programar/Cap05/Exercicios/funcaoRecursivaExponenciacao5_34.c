@@ -48,7 +48,7 @@ int main()
 
 } // fim função main
 
-// função exponenciacao
+// função exponencial
 int exponenciacao( int base, int expoente )
 {
     // se expoente igual a zero
