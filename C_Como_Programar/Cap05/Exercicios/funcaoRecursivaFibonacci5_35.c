@@ -17,7 +17,7 @@
 #include <locale.h>
 
 // protótipo
-long fibonacci( long numero );
+double fibonacci( long numero );
 
 // função principal
 int main()
@@ -40,7 +40,7 @@ int main()
         scanf( "%d", &num );
 
         // mostra resultado
-        printf( "O %dº número de fibonacci é %d\n", num, fibonacci( num ) );
+        printf( "O %dº número de fibonacci é %.0lf\n", num, fibonacci( num ) );
 
         // pergunta se quer continuar
         printf( "Deseja continuar [ 1 - sim / 0 - não ]? " );
@@ -72,7 +72,7 @@ int main()
 } // fim função main
 
 // função recursiva fibonacci
-long fibonacci( long numero )
+double fibonacci( long numero )
 {
     // se número igual a zero ou um
     if( numero == 0 || numero == 1 )
