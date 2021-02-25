@@ -35,7 +35,7 @@ int main()
         printf( "Digite 2 números para ver o mdc: " );
         scanf( "%d%d", &a, &b );
 
-        // mostra e chama a funnção mdc
+        // mostra e chama a função mdc
         printf( "O MDC de %d e %d é %d\n", a, b, mdcRecursivo( a, b ) );
 
         // deseja continuar
