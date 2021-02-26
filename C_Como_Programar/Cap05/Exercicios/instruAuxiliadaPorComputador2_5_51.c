@@ -115,7 +115,7 @@ int pergunta( int numero1, int numero2 )
 // cria a função mensagemBoa
 void mensagemBoa( int opcao )
 {
-    switch( opcao )
+     switch( opcao )
     {
         case 1:
             // imprima
