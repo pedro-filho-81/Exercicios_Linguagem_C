@@ -1,4 +1,4 @@
-/*
+    /*
     Questão: 5.54 Instrução auxiliada por computador: variando  os tipos de
     problemas. Modifique o programa do  Exercício 5.53 de modo a permitir que
     o usuário escolha  um tipo de problema aritmético para estudar. Uma opção
@@ -25,7 +25,7 @@ void mensagemBoa( int opcao );
 void mensagemRuim( int opcao );
 int sinal( int opcao );
 void cabecalho();
-
+void contarCertoOuErrado( int certo_errado );
 
 // função principal
 int main()
@@ -38,6 +38,7 @@ int main()
     int  multi = 0; // multiplica os números
     int resultado = 0; // recebe o valor informado pelo usuário na pergunta
     int resposta = 0; // controla a execução do segundo while
+    int misto = 0; // controla o while misto
     int contarRespCorretas = 0; // conta as respostas corretas
     int contarRespIncorretas = 0; // conta as respostas erradas
     int contarResultado = 0; // conta as respostas do usuário
@@ -47,7 +48,7 @@ int main()
     int respostaAritimetica = 0;// recebe o valor retornado da função opção aritimética
     int cabecalho = 1; // controla a execução do primeiro while
 
-    // CABEÇALHO
+    // WHILE CABEÇALHO
     // enquanto cabeçalho diferente de zero
     while( cabecalho != 0 )
     {
@@ -60,32 +61,42 @@ int main()
         // verifica se opção aritimética é igual a 5 e saia do programa
         if( opcAritimetica == 5 ) break;
 
-        // se opção aritimética é diferente de 5 faça
-        if( opcAritimetica != 5 ) {
+        // se não, se opção aritimética
+        else if( opcAritimetica == 4 ) {
 
+            misto = 1; // inicializa while misto
+            resposta = 0; // fecha while resposta
+
+        } // fim else if OPÇÃO ARITIMÉTICA
+
+        // se opção aritimética menor ou igual a 4 faça
+        if( opcAritimetica <= 4 )
+        {
             // limpa a tela
             system( "cls" );
 
             // chama a função menu de digitos
             menuDeDigitos();
-            // escolhe a opção do menu de digitos
+
+            // entrada para a escolha da opção no menu de digitos
             printf( "Digite a opção: " );
             scanf( "%d", &opcDeDigitos );
 
             // verifica se opcDeDigitos é igual a 4 e saia do programa
             if( opcDeDigitos == 4 ) break;
 
-            // se opção de digitos diferente de 4 ou opção aritimética diferente de 5
-            if( opcDeDigitos != 4 || opcAritimetica != 5 )
-                // inicialize resposta em 1
+            // se opção aritimética menor que 4
+            if( opcAritimetica < 4 )
+
+                // inicialize resposta em 1 e dá acesso ao while resposta diferente de zero
                 resposta = 1;
 
-        } // fim if
+        } // fim if OPÇÃO ARITIMÉTICA
 
-        // ATRIBUI VALORES ALEATÓRIOS AOS NÚMEROS
-        // enquanto resposta diferente de zero faça
-        while( resposta != 0 ) {
-
+        // WHILE MISTO DIFERENTE DE ZERO
+        // enquanto misto for diferente de zero
+        while( misto != 0 )
+        {
             // gerador
             srand( time( NULL ) );
 
@@ -93,27 +104,28 @@ int main()
             num1 = geraNumAleatorio( opcDeDigitos );
             num2 = geraNumAleatorio( opcDeDigitos );
 
+            // opção aritimética recebe 1, 2 ou 3 aleatório
+            opcAritimetica = 1 + rand() % 3;
+
             // resposta aritimética recebe o valor retornado da função opção aritimética
             respostaAritimetica = opcaoAritimetica( opcAritimetica, num1, num2 );
 
+            // WHILE RESULTADO DIFERENTE DE RESPOSTA
             // EXECUTA O PROGRAMA COM PERGUNTA E RESPOSTA
             // enquanto o resultado for diferente da resposta aritimética faça
-            while( resultado != respostaAritimetica ) {
-
+            while( resultado != respostaAritimetica )
+            {
                 // resultado recebe o valor retornado pela função pergunta
                 resultado = pergunta( opcAritimetica, num1, num2 );
 
                 // se resultado igual a zero fim do programa
                 if( resultado == 0 ) {
 
-                    // resposta recebe zero
-                    resposta = 0;
-                    cabecalho = 0;
+                    // resposta e cabeçalho recebem zero
+                    resposta = 0; // sai do while resposta
+                    cabecalho = 0; // sai do while cabeçalho
 
-                    // para o programa
-                    break;
-
-                } // fim if
+                } // fim if resultado igual a zero
 
                 // SE RESULTADO IGUAL A RESPOSTA
                 // se resultado igual a resposta aritimética
@@ -123,7 +135,7 @@ int main()
                     mensagemBoa( 1 + rand() % 4 );
 
                     // conta respostas corretas
-                    contarRespCorretas++;
+                    contarRespCorretas +=1;
 
                 } // fim if
 
@@ -148,8 +160,132 @@ int main()
                     // imprime resultado
                     printf( "=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-\n" );
                     printf( "Você respondeu %d questões, sendo:\n", contarResultado );
-                    printf( "Corretas %d\n", contarRespCorretas );
-                    printf( "Erradas %d\n", contarRespIncorretas );
+                    printf( " %d Corretas\n", contarRespCorretas );
+                    printf( " %d Erradas\n", contarRespIncorretas );
+
+                    // se respostas corretas forem menor que 8
+                    if( contarRespCorretas < 8 ) {
+
+                        // imprima fale com o professor
+                        printf( "Por favor, pessa ajuda a seu professor.\n" );
+                        printf( "Dê a vez ao próximo aluno.\n" );
+
+                        // zera as contagens
+                        contarResultado = 0;
+                        contarRespCorretas = 0;
+                        contarRespIncorretas = 0;
+                        // sai do while resposta
+                        resposta = 0;
+
+                        // pausa o sistema
+                        system( "pause" );
+
+                        // limpa a tela e vai para o cabeçalho
+                        system( "cls" );
+
+                    } // fim if CONTA TESPOSTAS CORRETAS
+
+                    // se não
+                    else {
+
+                        // imprima parabéns
+                        printf( "Parabéns, você está pronto para o próximo nível!\n" );
+                        printf( "Dê a vez ao próximo aluno.\n" );
+
+                        // zera as contagens
+                        contarResultado = 0;
+                        contarRespCorretas = 0;
+                        contarRespIncorretas = 0;
+                        // sai do while resposta
+                        resposta = 0;
+
+                        // pausa o sistema
+                        system( "pause" );
+
+                        // limpa a tela e vai para o cabeçalho
+                        system( "cls" );
+
+                    } // fim else CONTA RESPOSTAS CORRETAS
+
+                } // fim if CONTA RESULTADO IGUAL A 10
+
+            } // fim while interno RESULTADO DIFERENTE DE RESPOSTA
+
+             // sai do while misto
+            misto = 0;
+
+        } // fim while misto DIFERENTE DE ZERO
+
+        // WHILE RESPOSTA
+        // ATRIBUI VALORES ALEATÓRIOS AOS NÚMEROS
+        // enquanto resposta diferente de zero faça
+        while( resposta != 0 ) {
+
+            // gerador
+            srand( time( NULL ) );
+
+            // num1 e num2 recebe função geraNumAleatorio
+            num1 = geraNumAleatorio( opcDeDigitos );
+            num2 = geraNumAleatorio( opcDeDigitos );
+
+            // resposta aritimética recebe o valor retornado da função opção aritimética
+            respostaAritimetica = opcaoAritimetica( opcAritimetica, num1, num2 );
+
+            // WHILE RESULTADO
+            // EXECUTA O PROGRAMA COM PERGUNTA E RESPOSTA
+            // enquanto o resultado for diferente da resposta aritimética faça
+            while( resultado != respostaAritimetica )
+            {
+                // resultado recebe o valor retornado pela função pergunta
+                resultado = pergunta( opcAritimetica, num1, num2 );
+
+                // se resultado igual a zero fim do programa
+                if( resultado == 0 ) {
+
+                    // resposta e cabeçalho recebem zero
+                    resposta = 0; // sai do while resposta
+                    cabecalho = 0; // sai do while cabeçalho
+
+                    // para o programa
+                    break;
+
+                } // fim if RESULTADO IGUAL A ZERO
+
+                // SE RESULTADO IGUAL A RESPOSTA
+                // se resultado igual a resposta aritimética
+                if( resultado == respostaAritimetica ) {
+
+                    // mostra mensagem boa
+                    mensagemBoa( 1 + rand() % 4 );
+
+                    // conta respostas corretas
+                    contarRespCorretas++;
+
+                } // fim if RESULTADO IGUAL A RESPOSTA ARITIMÉTICA
+
+                // se não
+                else {
+
+                    // imprime mensagem ruim
+                    mensagemRuim( 1 + rand() % 4 );
+
+                    // contar respostas erradas
+                    contarRespIncorretas++;
+
+                } // fim else RESULTADO IGUAL A RESPOSTA ARITIMÉTICA
+
+                // conta quantas questões foram respondidas
+                contarResultado++;
+
+                // QUANDO RESULTADO FOR IGUAL A DEZ
+                // se contarResultado igual a dez pare
+                if( contarResultado == 10 ) {
+
+                    // imprime resultado
+                    printf( "=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-\n" );
+                    printf( "Você respondeu %d questões, sendo:\n", contarResultado );
+                    printf( " %d Corretas\n", contarRespCorretas );
+                    printf( " %d Erradas\n", contarRespIncorretas );
 
                     // se respostas corretas forem menor que 8
                     if( contarRespCorretas < 8 ) {
@@ -161,6 +297,7 @@ int main()
                         contarResultado = 0;
                         contarRespCorretas = 0;
                         contarRespIncorretas = 0;
+                        // sai do while resposta
                         resposta = 0;
 
                         // pausa o sistema
@@ -168,9 +305,10 @@ int main()
 
                         // limpa a tela
                         system( "cls" );
+                        // sai do programa
                         break;
 
-                    } // fim if
+                    } // fim if CONTAR RESPOSTAS CORRETAS
 
                     // se não
                     else {
@@ -183,6 +321,7 @@ int main()
                         contarResultado = 0;
                         contarRespCorretas = 0;
                         contarRespIncorretas = 0;
+                        // sai do while resposta
                         resposta = 0;
 
                         // pausa o sistema
@@ -191,14 +330,11 @@ int main()
                         // limpa a tela
                         system( "cls" );
 
-                    } // fim else
-
-                } // fim if
-
-            } // fim segundo while
-
-        } // fim terceiro while
-    } // fim primeiro while
+                    } // fim else CONTAR RESPOSTAS CORRETAS
+                } // fim if CONTAR RESULTADO
+            } // fim segundo while RESULTADO
+        } // fim terceiro while RESPOSTA
+    } // fim primeiro while CABEÇALHO
 
     // pula uma linha
     printf( "\n" );
