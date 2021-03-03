@@ -94,6 +94,7 @@ int main()
         } // fim if OPÇÃO ARITIMÉTICA
 
         // WHILE MISTO DIFERENTE DE ZERO
+        // usado quando usuário escolhe opção aritimética [ 4 - misto ]
         // enquanto misto for diferente de zero
         while( misto != 0 )
         {
@@ -106,6 +107,12 @@ int main()
 
             // opção aritimética recebe 1, 2 ou 3 aleatório
             opcAritimetica = 1 + rand() % 3;
+
+            // se opção aritimética igual a 3 e número 1 igual ao número 2
+            if( opcAritimetica == 2  && num1 == num2 ) {
+                // some 1 ao número 1
+                num1 += 1;
+            } // fim if opcAritimetica igual a 2
 
             // resposta aritimética recebe o valor retornado da função opção aritimética
             respostaAritimetica = opcaoAritimetica( opcAritimetica, num1, num2 );
@@ -212,10 +219,6 @@ int main()
                     } // fim else CONTAR RESPOSTAS CORRETAS
                 } // fim if CONTAR RESULTADO
             } // fim segundo while RESULTADO
-
-             // sai do while misto
-            //misto = 0;
-
         } // fim while misto DIFERENTE DE ZERO
 
         // WHILE RESPOSTA DIFERENTE DE ZERO
@@ -229,6 +232,12 @@ int main()
             // num1 e num2 recebe função geraNumAleatorio
             num1 = geraNumAleatorio( opcDeDigitos );
             num2 = geraNumAleatorio( opcDeDigitos );
+
+            // se opção aritimética igual a 3 e número 1 igual ao número 2
+            if( opcAritimetica == 2  && num1 == num2 ) {
+                // some 1 ao número 1
+                num1 += 1;
+            } // fim if opcAritimetica igual a 2
 
             // resposta aritimética recebe o valor retornado da função opção aritimética
             respostaAritimetica = opcaoAritimetica( opcAritimetica, num1, num2 );
@@ -469,6 +478,8 @@ void menuDeDigitos()
 
     // menu de opções do nível do jogo
     printf( "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" );
+    printf( "1 - fácil, 2 - médio, 3 - difícil\n" );
+    printf( "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n" );
     printf( "**** NÚMEROS DE DIGITOS USADOS ****\n" );
     printf( "\t1 - Um digito\n" );
     printf( "\t2 - Dois digitos\n" );
@@ -499,6 +510,13 @@ void menuDeDigitos()
  // função opção aritimética
  int opcaoAritimetica( int opcao, int numero1, int numero2 )
  {
+     /* se número 1 igual ao número 2
+        e opção igual a 2
+     */
+     if( opcao == 2 && numero1 == numero2 )
+        // número 2 recebe mais 1
+        numero2 += 1;
+
      switch( opcao )
      {
         case 1:
@@ -515,9 +533,3 @@ void menuDeDigitos()
 
      } // fim  switch
  } // fim fução
-
- // função cabeçalho
- void cabecalho()
- {
-
- }
