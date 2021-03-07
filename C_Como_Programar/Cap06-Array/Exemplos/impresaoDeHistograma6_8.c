@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#define SIZE 10
+#define SIZE 8
 
 // função principal
 int main()
@@ -17,7 +17,7 @@ int main()
     setlocale( LC_ALL, "Portuguese" );
 
     // variáveis
-    int n[ SIZE] = { 18, 3, 15, 7, 11, 9, 13, 5, 17, 1 };
+    int n[ SIZE] = { 35, 30, 25, 20, 15, 10, 5, 1 };
     int i;
     int j;
 
