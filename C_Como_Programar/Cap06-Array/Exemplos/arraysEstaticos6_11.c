@@ -53,7 +53,7 @@ void estaticoArrayInit()
     // loop for
     for( i = 0; i < 3; i++ )
     {
-        printf( "\narray[ %d ] = %d ", i, array1[ i ] );
+        printf( "array[ %d ] = %d ", i, array1[ i ] );
     } // fim for
 
     printf( "\nValores na saída de estaticpArrayInit()\n" );
@@ -61,7 +61,7 @@ void estaticoArrayInit()
     // loop for
     for( i = 0; i < 3; i++ )
     {
-        printf( "\narray[ %d ] = %d ", i, array1[ i ] += 5 );
+        printf( "array[ %d ] = %d ", i, array1[ i ] += 5 );
     } // fim for
 
 } // fim função
@@ -72,19 +72,19 @@ void automaticoArrayInit()
     static int array1[ 3 ] = {1, 2, 3};
     int i;
 
-    printf( "\n\nValores na entrada de automaticoArrayInit()" );
+    printf( "\n\nValores na entrada de automaticoArrayInit()\n" );
 
     // loop for
     for( i = 0; i < 3; i++ )
     {
-        printf( "\narray[ %d ] = %d ", i, array1[ i ] );
+        printf( "array[ %d ] = %d ", i, array1[ i ] );
     } // fim for
 
-    printf( "\nValores na saída de automaticoArrayInit()" );
+    printf( "\nValores na saída de automaticoArrayInit()\n" );
 
     // loop for
     for( i = 0; i < 3; i++ )
     {
-        printf( "\narray[ %d ] = %d ", i, array1[ i ] += 5 );
+        printf( "array[ %d ] = %d ", i, array1[ i ] += 5 );
     } // fim for
 }
