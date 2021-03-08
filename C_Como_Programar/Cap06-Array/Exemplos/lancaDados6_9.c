@@ -30,9 +30,9 @@ int main()
     {
         // gera um número aleatório entre 1 e 6
         face =  1 + rand() % 6;
-        // conta com que frequência um número da face aparece
+        // frequência recebe um número de face e soma 1 na posição
         ++frequencia[ face ];
-    }
+    } // fim for
 
     // imprime cabeçalho
     printf( "%s%13s\n", "Face", "Frequência" );
@@ -40,6 +40,7 @@ int main()
     // loop para mostrar a frequência
     for( face = 1; face < SIZE; face++ )
     {
+        // imprime a posição e o valor armazenado na posição
         printf( "%3d%10d\n", face, frequencia[ face ] );
     } // fim for
 
