@@ -21,7 +21,7 @@ int main()
 
     soma = numero1 + numero2; // atribui o total a soma
 
-    printf( "A soma e5 %d\n", soma ); // imprime soma
+    printf( "A soma e %d\n", soma ); // imprime soma
 
     return 0; // fim do programa
 } // fim main
