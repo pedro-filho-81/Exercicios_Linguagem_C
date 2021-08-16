@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 // cria função principal
-int main( void )
+int main()
 {
     printf( "Bem-vindo " );
     printf( "a C!\n");
