@@ -1,7 +1,8 @@
 /*
-    Questão: /* Figura 6.5: fig06_05.c  2 Inicializa elementos do array s como inteiros pares de 2 a 20
+    Figura 6.5: fig06_05.c
+    2 Inicializa elementos do array s como inteiros pares de 2 a 20
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 165). Edição do Kindle.
-    Autor: Pedro Filho, 04/03/2021
+    04/03/2021
 */
 
 // bibliotecas

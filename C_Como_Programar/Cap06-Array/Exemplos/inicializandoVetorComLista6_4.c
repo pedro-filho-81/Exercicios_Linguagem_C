@@ -1,7 +1,8 @@
 /*
-    Questão: Figura 6.4: fig06_04.c  2 Inicializando um array com uma lista de inicializadores
+    Figura 6.4: fig06_04.c
+    2 Inicializando um array com uma lista de inicializadores
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 164). Edição do Kindle.
-    Autor: Pedro Filho, 03/03/2021
+    03/03/2021
 */
 
 // bibliotecas

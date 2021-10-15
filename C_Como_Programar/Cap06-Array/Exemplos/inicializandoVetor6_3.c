@@ -1,7 +1,7 @@
 /*
     Questão: Figura 6.3: fig06_03.c  2 Inicializando um array
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 163). Edição do Kindle.
-    Autor: Pedro Filho, 03/03/2021
+    03/03/2021
 */
 
 // bibliotecas

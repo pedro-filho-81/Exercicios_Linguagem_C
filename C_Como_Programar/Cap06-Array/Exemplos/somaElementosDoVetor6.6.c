@@ -1,7 +1,8 @@
 /*
-    Questão: /* Figura 6.6: fig06_06.c  2 Calcula a soma dos elementos do array
+    Figura 6.6: fig06_06.c
+    2 Calcula a soma dos elementos do array
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 167). Edição do Kindle.
-    Pedro Filho, 04/03/2021
+    04/03/2021
 */
 
 // bibliotecas
