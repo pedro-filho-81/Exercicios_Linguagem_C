@@ -1,7 +1,8 @@
 /*
-    Questão: /* Figura 6.9: fig06_09.c  2 Lança um dado de 6 lados 6000 vezes
+    Figura 6.9: fig06_09.c
+    2 Lança um dado de 6 lados 6000 vezes
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 170). Edição do Kindle.
-    Autor: Pedro Filho, 07/03/2021
+    07/03/2021
 */
 
 // bibliotecas
@@ -26,7 +27,7 @@ int main()
     srand( time( NULL ) );
 
     // LOOP PARA rolar o dado
-    for( rola = 1; rola <= 6000; rola++ )
+    for( rola = 1; rola <= 600000; rola++ )
     {
         // gera um número aleatório entre 1 e 6
         face =  1 + rand() % 6;

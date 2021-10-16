@@ -1,7 +1,7 @@
 /*
-    Questão: /* Figura 6.11: fig06_11.c  2 Arrays estáticos são inicializados em zero
+    Figura 6.11: fig06_11.c  2 Arrays estáticos são inicializados em zero
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 173). Edição do Kindle.
-    Autor: Pedro Filho, 08/03/2021
+    08/03/2021
 */
 
 // bibliotecas

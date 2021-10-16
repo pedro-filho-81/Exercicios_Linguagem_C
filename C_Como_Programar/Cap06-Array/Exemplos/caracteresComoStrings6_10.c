@@ -1,7 +1,8 @@
 /*
-    Questão: / * Figura 6.10: fig06_10.c  2 Tratando arrays de caracteres como strings
+    Figura 6.10: fig06_10.c
+    2 Tratando arrays de caracteres como strings
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 172). Edição do Kindle.
-    Autor: Pedro Filho, 08/03/2021
+    08/03/2021
 */
 
 // bibliotecas

@@ -1,7 +1,8 @@
 /*
-    Questão: /* Figura 6.8: fig06_08.c  2 Programa de impressão de histograma
+    Figura 6.8: fig06_08.c
+    2 Programa de impressão de histograma
     Deitel, Paul; Deitel, Harvey. C  Como Programar (p. 169). Edição do Kindle.
-    Autor: Pedro Filho, 07/03/2021
+    07/03/2021
 */
 
 // bibliotecas
@@ -26,15 +27,17 @@ int main()
     // loop para mostrar vetor
     for( i = 0; i < SIZE; i++ )
     {
+        // imprime o índice, valor do vetor e espaço em branco
         printf( "%5d%13d%10s", i, n[ i ], " " );
 
         // loop para mostrar o histograma
         for( j = 1; j <= n[ i ]; j++ )
         {
+            // imprime asterosco
             printf( "%c", '*' );
         } // fim for interno
 
-        printf( "\n" );
+        printf( "\n" ); // pula linha
 
     } // fim for externo
 
