@@ -23,13 +23,13 @@ int main()
 
     // imprime
     printf( "Primeira chamada para cada função:\n" );
-    automaticoArrayInit();
     estaticoArrayInit();
+    automaticoArrayInit();
 
     // imprime
     printf( "\n\nSegunda chamada paracada função:\n");
-    automaticoArrayInit();
     estaticoArrayInit();
+    automaticoArrayInit();
 
     // pula uma linha
     printf( "\n" );
@@ -56,7 +56,7 @@ void estaticoArrayInit()
         printf( "array[ %d ] = %d ", i, array1[ i ] );
     } // fim for
 
-    printf( "\nValores na saída de estaticpArrayInit()\n" );
+    printf( "\nValores na saída de estaticoArrayInit()\n" );
 
     // loop for
     for( i = 0; i < 3; i++ )

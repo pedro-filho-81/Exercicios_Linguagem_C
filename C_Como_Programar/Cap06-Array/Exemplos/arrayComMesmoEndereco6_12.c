@@ -1,6 +1,6 @@
 /*
     Questão: array com mesmo endereço
-    Autor: Pedro Filho, 08/03/2021
+    08/03/2021
 */
 
 // bibliotecas
