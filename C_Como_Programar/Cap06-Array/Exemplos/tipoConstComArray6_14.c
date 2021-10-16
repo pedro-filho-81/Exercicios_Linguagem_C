@@ -35,6 +35,7 @@ int main()
 // cria a função tryToModifyArray
 void tryToModifyArray( const int b[] )
 {
+    // parametros constante não aceita modificação
     b[ 0 ] /= 2; // erro
     b[ 1 ] /= 2;// erro
     b[ 2 ] /= 2; // erro
