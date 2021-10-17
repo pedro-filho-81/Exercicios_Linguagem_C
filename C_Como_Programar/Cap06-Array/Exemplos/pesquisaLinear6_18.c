@@ -34,6 +34,25 @@ int main()
     addElements( vector, SIZE ); // add elements to the vector
     showVectorElements( vector, SIZE ); // show vector elements
 
+    // data input
+    printf( "Informe o valor a pesquisar: " );
+    scanf( "%d", &searchKey ); // user input
+
+    // element receives linearSearch
+    element = linearSearch( vector, SIZE, searchKey );
+
+    // if element equals searchKey
+    if( element != -1 )
+    {
+        // display
+        printf( "%d encontra-se na posição %d\n", searchKey, element );
+    } // end if
+    else
+    {
+        // display
+        printf( "%d não encontrado.\n", searchKey );
+    } // end else
+
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
@@ -64,6 +83,7 @@ void showVectorElements( const int vector[], int size )
             // display elements
             printf( "%3d ", vector[ show ] );
 
+        // if multiple of twenty
         if( show % 20 == 0 )
             // next line
             printf( "\n" );
@@ -78,5 +98,16 @@ void showVectorElements( const int vector[], int size )
 // create function linearSearch
 int linearSearch( const int vector[], int size, int key )
 {
+    // for loop to search vector
+    for( int pesquisa = 0; pesquisa < size; pesquisa++ )
+    {
+        // if vector equals key
+        if( vector[ pesquisa ] == key )
+        {
+            return pesquisa;
+        } // end if
+    } // end for
 
+    // if vector different from search return -1
+    return -1;
 } // end function
