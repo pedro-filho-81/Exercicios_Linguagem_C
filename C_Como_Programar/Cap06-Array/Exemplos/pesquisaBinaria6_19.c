@@ -13,13 +13,13 @@
 #define SIZE 15
 
 // PROTÓTIPOS
-void addElements( int vector[], int size ); // add elements to the vector
-void showVectorElements( const int vector[], int size ); // mostra os elementos do vetor
-void printHeader( const int vetor[], int size );
-void bubbleSort( int vector[], int size ); // ordena os elementos do vetor
-void printRow( const int vector[], int size, int low, int mid, int high );
+void addElements( int vector[] ); // add elements to the vector
+void showVectorElements( const int vector[] ); // mostra os elementos do vetor
 void printHeader(); // imprime o cabeçalho
-int binarySreach( const int vector[], int size, int sreachKey, int low, int high ); // pesquisa binaria
+void bubbleSort( int vector[] ); // ordena os elementos do vetor
+void printRow( const int vector[], int low, int mid, int high ); // mostra os elementos da linha do vetor
+void printHeader(); // imprime o cabeçalho
+int binarySreach( const int vector[], int sreachKey, int low, int high ); // pesquisa binaria
 
 // função principal
 int main()
@@ -44,42 +44,42 @@ int main()
      printf( "PESQUISA BINÁRIA\n" );
 
     // call the function addElements
-    addElements( number, SIZE );
+    addElements( number );
 
     // display
     printf( "vetor original " );
 
     // call the function showVectorElements
-    showVectorElements( number, SIZE );
+    showVectorElements( number );
 
     // call the function bubbleSort
-    bubbleSort( number, SIZE );
+    bubbleSort( number );
 
     // display
     printf("vetor organizado " );
 
     // call the function showVectorElements
-    showVectorElements( number, SIZE );
+    showVectorElements( number );
 
      // data input
      printf( "Informe o número a ser pesquisado: " );
      scanf( "%d", &key );
 
-//     printHeader();
+    printHeader(); // display header
 
     // result receives value from binary sreach function
-    result = binarySreach( number, SIZE, key, 0, SIZE - 1 );
+    result = binarySreach( number, key, 0, SIZE - 1 );
 
     // if result different from -1
     if( result != -1 )
     {
         // display
-        printf( "%d encontrado na posição %d\n", result );
+        printf( "%d encontrado na posição %d\n", key, result );
     } // end if
     else
     {
         // display
-        printf( "%d não encontrado;\n" );
+        printf( "%d não encontrado;\n", key );
     } // end else
 
     system("pause"); // pausa do programa
@@ -89,19 +89,19 @@ int main()
 } // fim main
 
 // create function addElements
-void addElements( int vector[], int size )
+void addElements( int vector[] )
 {
     // for loop to add  emements to the vector
-    for( int adicionar = 0; adicionar < size; adicionar++ )
+    for( int adicionar = 0; adicionar < SIZE; adicionar++ )
         vector[ adicionar ] = 1 + rand() % 50;
 } // end function addElements
 
 // create function showVectorElements
-void showVectorElements( const int vector[], int size )
+void showVectorElements( const int vector[] )
 {
     printf( "= { " );
     // for loop to show vector elements
-    for( int mostrar = 0; mostrar < size; mostrar++ )
+    for( int mostrar = 0; mostrar < SIZE; mostrar++ )
     {
         // display vector elements
         printf( "%3d", vector[ mostrar ] );
@@ -110,15 +110,15 @@ void showVectorElements( const int vector[], int size )
 } // end function showVectorElements
 
 // create function bubbleSort
-void bubbleSort( int vector[], int size )
+void bubbleSort( int vector[] )
 {
     // create variable
     int temporary = 0;
 
     // for loop to organize vector elements
-    for( int i = 0; i < size; i++ )
+    for( int i = 0; i < SIZE; i++ )
     {
-        for( int j = 0; j < size; j++ )
+        for( int j = 0; j < SIZE; j++ )
         {
             if( vector[ j ] > vector[ i ] )
             {
@@ -131,7 +131,7 @@ void bubbleSort( int vector[], int size )
 } // end function bubbleSort
 
 // create function binarySreach
-int binarySreach( const int vector[], int size, int sreachKey, int low, int high )
+int binarySreach( const int vector[], int sreachKey, int low, int high )
 {
     int middle; // variável para manter elemento do meio do array
 
@@ -139,7 +139,7 @@ int binarySreach( const int vector[], int size, int sreachKey, int low, int high
     {
         middle = ( low + high ) / 2;
 
-        printRow( vector, size, low, middle, high );
+        printRow( vector, low, middle, high );
 
         if( sreachKey == vector[ middle ] )
         {
@@ -161,11 +161,11 @@ int binarySreach( const int vector[], int size, int sreachKey, int low, int high
 } //  end functin binarySreach
 
 // create function printRow
-void printRow( const int vector[], int size, int low, int mid, int high )
+void printRow( const int vector[], int low, int mid, int high )
 {
     int i; // contador
 
-    for( i = 0; i < size; i++ )
+    for( i = 0; i < SIZE; i++ )
     {
         if( i < low || i > high )
         {
@@ -183,4 +183,26 @@ void printRow( const int vector[], int size, int low, int mid, int high )
     printf( "\n" );
 } // end function printRow
 
-//
+// create function printHeader
+void printHeader()
+{
+    // variable
+    int i; // contador
+
+    printf( "Subscritos\n" );
+
+    // for loop to show line
+    for( i = 0; i < SIZE; i++ ) {
+        printf( "%3d ", i );
+    } // end for index
+
+    printf( "\n" ); // next line
+
+    // loop for to display a character line
+    for( i = 0; i < SIZE * 4; i++ ) {
+        printf( "-" );
+    } // end for line
+
+    printf( "\n" ); // next line
+
+} // end function printHeader
