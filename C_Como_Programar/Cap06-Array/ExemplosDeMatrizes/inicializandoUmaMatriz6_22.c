@@ -13,10 +13,10 @@
 #define EXAMS 4
 
 // protótipo
-void Minimum( const int grades[][ EXAMS], int pupils, int test );
-void Maximum( const int grades[][ EXAMS ], int pupils, int test );
+int minimum( const int grades[][ EXAMS], int pupils, int test );
+int maximum( const int grades[][ EXAMS ], int pupils, int test );
 void printArray( const int grades[][ EXAMS ], int pupils, int test );
-double Average( const int setOfGrades[], int test );
+double average( const int setOfGrades[], int test );
 
 // função principal
 int main()
@@ -32,14 +32,20 @@ int main()
 
     // array
     const int studentGrades[ STUDENTS ][ EXAMS ] = {
-                                                                                            {77, 68, 86, 73 },
-                                                                                            {96, 87, 89, 78 },
+                                                                                            { 77, 68, 86, 73 },
+                                                                                            { 96, 87, 89, 78 },
                                                                                             { 70, 90, 86, 81 }
                                                                                         }; // end array student grades
 
     // show array studentGrades
     printf( "A matriz studentGrades é \n" );
     printArray( studentGrades, STUDENTS, EXAMS );
+
+    printf( "\n\nMenor nota = %d\nMaior nota = %d\n",
+           minimum( studentGrades, STUDENTS, EXAMS ),
+           maximum( studentGrades, STUDENTS, EXAMS ) );
+
+    printf( "Média = %.2f\n", average( studentGrades, EXAMS ) );
 
     system("pause"); // pausa do programa
 
@@ -66,3 +72,62 @@ void printArray( const int grades[][ EXAMS ], int pupils, int test )
         } // end for grades
     } // end for students
 } // end funcion printArray
+
+// create function minimum
+int minimum( const int grades[][ 4 ], int pupils, int test )
+{
+    // variable
+    int lowGrade = 100;
+
+    // loop through the note lines
+    for( int lines = 0; lines < pupils; lines++ )
+    {
+        // loop through the columns of notes
+        for( int columns = 0; columns < test; columns++ )
+        {
+            if( grades[ lines ][ columns ] < lowGrade )
+                lowGrade = grades[ lines ][ columns ];
+        } // end for columns
+    } // end for lines
+
+    return lowGrade;
+
+} // end function minimum
+
+// create function maximum
+int maximum( const int grades[][ 4 ], int pupils, int test )
+{
+    int highGrade = 0;
+
+    // loop through the note lines
+    for( int lines = 0; lines < pupils; lines++ )
+    {
+        // loop through the columns of notes
+        for( int columns = 0; columns < test; columns++ )
+        {
+            if( grades[ lines ][ columns ] > highGrade )
+                highGrade = grades[ lines ][ columns ];
+
+        } // end for columns
+    } // end for lines
+
+    return highGrade;
+
+} // end function maximum
+
+// create function average
+double average( const int setOfGrades[], int test )
+{
+    // variable
+    int total = 0;
+
+    // loop to sum vector values
+    for( int values = 0; values < test; values++ )
+    {
+        total += setOfGrades[ values ];
+    } // end for valores
+
+    // return avarage
+    return ( double ) total / test;
+
+} // end function average
