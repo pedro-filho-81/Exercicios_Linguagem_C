@@ -16,7 +16,9 @@
 int minimum( const int grades[][ EXAMS], int pupils, int test );
 int maximum( const int grades[][ EXAMS ], int pupils, int test );
 void printArray( const int grades[][ EXAMS ], int pupils, int test );
+void showAverage( const int grades[][ EXAMS ], int pupils, int test );
 double average( const int setOfGrades[], int test );
+
 
 // função principal
 int main()
@@ -37,6 +39,9 @@ int main()
                                                                                             { 70, 90, 86, 81 }
                                                                                         }; // end array student grades
 
+    // header
+    printf( "NOTA DOS ALUNOS\n" );
+
     // show array studentGrades
     printf( "A matriz studentGrades é \n" );
     printArray( studentGrades, STUDENTS, EXAMS );
@@ -46,6 +51,11 @@ int main()
            maximum( studentGrades, STUDENTS, EXAMS ) );
 
     printf( "Média = %.2f\n", average( studentGrades, EXAMS ) );
+
+    // loop to show student's grade point average
+    for( student = 0; student < STUDENTS; student++ )
+        printf( "A nota média do aluno %d é %.2f\n",
+               student + 1, average( studentGrades[ student ], EXAMS ) );
 
     system("pause"); // pausa do programa
 
