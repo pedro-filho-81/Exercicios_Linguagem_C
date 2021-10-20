@@ -43,6 +43,9 @@ int main()
     printf( "a) Escreva uma definição para t.\n"
                 "\tint t[ 2 ][ 5 ];\n" );
 
+    // create array
+    int t[ 2 ][ 5 ] = {0};
+
     printf( "b) Quantas linhas t possui?\n"
                 "\ttem duas linhas.\n" );
 
@@ -65,10 +68,29 @@ int main()
                 "\tNão use uma estrutura de repetição.\n"
                 "\tt[ 0 ][ 0 ] = 0; t[ 0 ][ 1 ] = 0; t[ 0 ][ 2 ] = 0; t[ 0 ][ 3 ] = 0; t[ 0 ][ 4 ] = 0;\n"
                 "\tt[ 1 ][ 0 ] = 0; t[ 1 ][ 1 ] = 0; t[ 1 ][ 2 ] = 0; t[ 1 ][ 3 ] = 0; t[ 1 ][ 4 ] = 0;\n" );
-/*
-    i) Escreva uma estrutura for aninhada que inicialize  cada elemento de t em zero.
-    j) Escreva uma instrução que insira os valores dos elementos de t a partir do terminal.
-    k) Escreva uma série de instruções que determinem e  imprimam o menor valor no array t.
+
+    printf( "i) Escreva uma estrutura for aninhada que inicialize  cada elemento de t em zero.\n" );
+
+    for( int i = 0; i < 2; i++ ) // create the array line
+        for( int j = 0; j < 5; j++ ) // create the array columns
+            printf( "%d ", t[ i ][ j ] ); // show array elements
+    printf( "\n" ); // next line
+
+    printf( "j) Escreva uma instrução que insira os valores dos elementos de t a partir do terminal.\n" );
+
+    // loop to add vector elements
+    for( int i = 0; i < 2; i++ ) // create the array line
+        for( int j = 0; j < 5; j++ ) // create the array columns
+            t[ i ][ j ] = 2; // show array elements
+    printf( "\n" ); // next line
+
+    for( int i = 0; i < 2; i++ ) // create the array line
+        for( int j = 0; j < 5; j++ ) // create the array columns
+            printf( "%d ", t[ i ][ j ] ); // show array elements
+    printf( "\n" ); // next line
+
+
+    /* k) Escreva uma série de instruções que determinem e  imprimam o menor valor no array t.
     l) Escreva uma instrução que apresente os elementos  da primeira linha de t.
     m) Escreva uma instrução que some os elementos da  quarta coluna de t.
     n) Escreva uma série de instruções que imprimam o  array t em formato tabular.
