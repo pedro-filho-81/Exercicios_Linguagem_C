@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <time.h>
 
 // função principal
 int main()
@@ -72,31 +73,82 @@ int main()
     printf( "i) Escreva uma estrutura for aninhada que inicialize  cada elemento de t em zero.\n" );
 
     for( int i = 0; i < 2; i++ ) // create the array line
+    {
         for( int j = 0; j < 5; j++ ) // create the array columns
-            printf( "%d ", t[ i ][ j ] ); // show array elements
-    printf( "\n" ); // next line
+            printf( "%3d ", t[ i ][ j ] ); // show array elements
+        printf( "\n" ); // next line
+    } // end for
 
     printf( "j) Escreva uma instrução que insira os valores dos elementos de t a partir do terminal.\n" );
 
     // loop to add vector elements
     for( int i = 0; i < 2; i++ ) // create the array line
         for( int j = 0; j < 5; j++ ) // create the array columns
-            t[ i ][ j ] = 2; // show array elements
-    printf( "\n" ); // next line
+            t[ i ][ j ] = 2 * j; // add array elements
 
     for( int i = 0; i < 2; i++ ) // create the array line
+    {
         for( int j = 0; j < 5; j++ ) // create the array columns
-            printf( "%d ", t[ i ][ j ] ); // show array elements
-    printf( "\n" ); // next line
+            printf( "%3d ", t[ i ][ j ] ); // show array elements
+        printf( "\n" ); // next line
+    } // end for
 
+    printf( "k) Escreva uma série de instruções que determinem e  imprimam o menor valor no array t.\n" );
+    // semente
+    srand(time( NULL ) );
 
-    /* k) Escreva uma série de instruções que determinem e  imprimam o menor valor no array t.
-    l) Escreva uma instrução que apresente os elementos  da primeira linha de t.
-    m) Escreva uma instrução que some os elementos da  quarta coluna de t.
-    n) Escreva uma série de instruções que imprimam o  array t em formato tabular.
-        Liste os subscritos de  coluna como cabeçalhos no topo e liste os subscritos
-        de linha à esquerda de cada linha.
-*/
+    // variable
+    int menorValor;
+
+    // loop to add vector elements
+    for( int i = 0; i < 2; i++ ) // create the array line
+        for( int j = 0; j < 5; j++ ) // create the array columns
+            t[ i ][ j ] = 1 + rand() % 50; // add array elements
+
+    menorValor = t[0][0];
+    for( int i = 0; i < 2; i++ ) // create the array line
+    {
+        for( int j = 0; j < 5; j++ ) // create the array columns
+        {
+            printf( "%3d ", t[ i ][ j ] ); // show array elements
+
+            if( t[ i ][ j ] < menorValor )
+                menorValor = t[ i ][ j ];
+        } // end for columns
+        printf( "\n" ); // next line
+    } // end for
+    printf( "O menor valor é %d\n", menorValor ); // next line
+
+    printf("l) Escreva uma instrução que apresente os elementos  da primeira linha de t.\n" );
+    printf( "\tprimeira linha t = " );
+    for( int i = 0; i < 5; i++ )
+        printf( "%3d", t[ 0 ][ i ] );
+    printf( "\n" );
+
+    printf( "m) Escreva uma instrução que some os elementos da  quarta coluna de t.\n" );
+    printf( "\tquarta coluna de t =" );
+    int soma;
+    for( int i = 0; i < 2; i++ )
+    {
+        soma += t[ i ][ 3 ];
+        printf( "%3d", t[ i ][ 3 ] );
+    } // end for
+    printf( "  Soma = %d\n", soma );
+
+    printf( "n) Escreva uma série de instruções que imprimam o  array t em formato tabular.\n"
+                "Liste os subscritos de  coluna como cabeçalhos no topo e liste os subscritos.\n"
+                "de linha à esquerda de cada linha.\n" );
+
+    printf( "            [1] [2] [3] [4] [5]\n" );
+    for( int i = 0; i < 2; i++ ) // create the array line
+    {
+        // header line
+        printf( "linha %d -> ", i );
+        for( int j = 0; j < 5; j++ ) // create the array columns
+            printf( "%3d ", t[ i ][ j ] ); // show array elements
+        printf( "\n" ); // next line
+    } // end for
+
     system("pause"); // pausa do programa
 
     return 0; // programa terminado com sucesso
