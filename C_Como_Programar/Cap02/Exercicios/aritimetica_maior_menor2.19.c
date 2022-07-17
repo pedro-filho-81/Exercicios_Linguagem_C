@@ -28,6 +28,8 @@ int main()
    printf( "Digite 3 inteiros diferentes: " );
    scanf( "%d%d%d", &n1, &n2, &n3 );
 
+   maior = n1;
+   menor = n1;
 
    // calcular
    soma = n1 + n2 +n3;
@@ -44,35 +46,35 @@ int main()
 
    // verificar o menor e o maior
    if( n1 > n2 ) // 3 1 2
-      if( n2 < n3 ) {
+      if( n1 > n3 ) {
          maior = n1;
          menor = n2;
       } //  fim if
 
    // verificar o menor e o maior
-   if( n3 > n2 ) // 1 2 3
-      if( n2 > n1 ) {
+   if( n1 < n2 ) // 1 2 3
+      if( n2 < n3 ) {
          maior = n3;
          menor = n1;
       } //  fim if
 
    // verificar o menor e o maior
-   if( n3 > n2 ) // 2 1 3
-      if( n2 < n1 ) {
+   if( n1 > n2 ) // 2 1 3
+      if( n2 < n3 ) {
          maior = n3;
          menor = n2;
       } //  fim if
 
    // verificar o menor e o maior
-   if( n2 > n3 ) // 1 3 2
-      if( n3 > n1 ) {
+   if( n1 < n2 ) // 1 3 2
+      if( n2 > n3 ) {
          maior = n2;
          menor = n1;
       } //  fim if
 
    // verificar o menor e o maior
-   if( n2 > n1 ) // 2 3 1
-      if( n1 > n3 ) {
+   if( n1 < n2 ) // 2 3 1
+      if( n2 > n3 ) {
          maior = n2;
          menor = n3;
       } //  fim if
