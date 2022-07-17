@@ -41,4 +41,5 @@ int main(void)
 	printf("\nÁrea = %.2f cm\n", area);
 
 	return 0;
+
 } // fim main
