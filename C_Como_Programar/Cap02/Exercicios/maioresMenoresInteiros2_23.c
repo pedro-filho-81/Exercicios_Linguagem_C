@@ -35,6 +35,7 @@ int main()
     // 1 3 2 4 5
    // neste case 1 será o menor valor
    if( n1 < n2 )
+    if(n2 < )
       menorValor = n1;
 
    // Quando o maior valor é o último
