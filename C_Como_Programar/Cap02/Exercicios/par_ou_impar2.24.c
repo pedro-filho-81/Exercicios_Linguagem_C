@@ -27,7 +27,7 @@ int main(void)
 
 	// Verifica se o número digitado é par ou impar
 	if ( n % 2 == 0){
-		printf("%d e um número par.", n);
+		printf("%d é um número par.", n);
 	} // fim if
 
 	if (n % 2 != 0){
