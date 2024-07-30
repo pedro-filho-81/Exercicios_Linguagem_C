@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/psfil/OneDrive/Documentos/github/comoProgramarEmC/Exercicios_Linguagem_C/C_Como_Programar/Cap02/Exercicios",
+      "program": "c:/Users/psfil/OneDrive/Documentos/github/comoProgramarEmC/Exercicios_Linguagem_C/C_Como_Programar/Cap02/Exercicios/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
